@@ -1,0 +1,80 @@
+﻿@model JedjanguiWeb.Models.Fond
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Fond</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ASSOCIATION.NOMASSO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ASSOCIATION.NOMASSO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMFOND)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMFOND)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COMPTEBANQUEFOND)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COMPTEBANQUEFOND)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BANQUE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BANQUE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OBJECTIFFOND)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OBJECTIFFOND)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OBLIGATOIRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OBLIGATOIRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TYPEFOND)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TYPEFOND)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

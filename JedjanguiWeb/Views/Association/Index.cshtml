@@ -1,0 +1,61 @@
+﻿@model IEnumerable<JedjanguiWeb.Models.Association>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NOMASSO)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.SIGLEASSO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATEAJOUTER)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.SLOGANASSO)
+        </th>
+       
+        
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOMASSO)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.SIGLEASSO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATEAJOUTER)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.SLOGANASSO)
+        </td>
+       
+      
+        <td>
+            @Html.ActionLink("Ouvrir", "Ouvrir", new { id = item.CODEASSO }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.CODEASSO }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CODEASSO }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.CODEASSO })
+        </td>
+    </tr>
+}
+
+</table>

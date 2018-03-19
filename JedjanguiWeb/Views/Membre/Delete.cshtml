@@ -1,0 +1,184 @@
+﻿@model JedjanguiWeb.Models.Membre
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Membre</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.association.NOMASSO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.association.NOMASSO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MEM_CODEMEMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MEM_CODEMEMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMMEMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMMEMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATEADEHSIONMEMEBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATEADEHSIONMEMEBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATEDEMISSION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATEDEMISSION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATENAISSANCEMEMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATENAISSANCEMEMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUTMEMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUTMEMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FONCTIONMEMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FONCTIONMEMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TELMEMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TELMEMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RESIDENCEMEMEBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RESIDENCEMEMEBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADRESSEMEMEBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADRESSEMEMEBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEXEMEMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEXEMEMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUTMATRIMONIALE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUTMATRIMONIALE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAILMEMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAILMEMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBREENFANT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBREENFANT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOTEMEMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOTEMEMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TITREMEMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TITREMEMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TYPEMEMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TYPEMEMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ELOGE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ELOGE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MATRICULE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MATRICULE)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

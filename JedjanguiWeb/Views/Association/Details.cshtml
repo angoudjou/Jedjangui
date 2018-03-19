@@ -1,0 +1,98 @@
+﻿@model JedjanguiWeb.Models.Association
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Association</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMASSO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMASSO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BUTASSO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BUTASSO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SIGLEASSO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SIGLEASSO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATECREATIONASS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATECREATIONASS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COMPTABANKASSO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COMPTABANKASSO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BANQUEASSO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BANQUEASSO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SLOGANASSO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SLOGANASSO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADDRESSEASSO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADDRESSEASSO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOTPASSEASSO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOTPASSEASSO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LIEURENCONTRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LIEURENCONTRE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CODEASSO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
