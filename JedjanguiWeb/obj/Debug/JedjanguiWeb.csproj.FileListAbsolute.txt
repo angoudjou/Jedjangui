@@ -69,3 +69,8 @@ C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\Jedjangui
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.dll
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.pdb
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.csprojResolveAssemblyReference.cache
+C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\PagedList.dll
+C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\PagedList.Mvc.dll
+C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\PagedList.xml
+C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\PagedList.Mvc.xml
+C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.csproj.CopyComplete

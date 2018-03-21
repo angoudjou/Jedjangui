@@ -8,17 +8,25 @@ using System.Web;
 using System.Web.Mvc;
 using JedjanguiWeb.DAL;
 using JedjanguiWeb.Models;
+using PagedList;
 
 namespace JedjanguiWeb.Controllers
 {
     public class AssociationController : Controller
     {
         private JeDjanguiContext db = new JeDjanguiContext();
+        int PageSize ;
 
         // GET: Association
-        public ActionResult Index()
+        public ActionResult Index(int Page=1, string  SearchString="")
         {
-            return View(db.Associations.ToList());
+            ViewBag.SearchString = SearchString;
+            PageSize =int.Parse( Session["PageSize"].ToString());
+            if(string.IsNullOrEmpty(SearchString))
+            return View(db.Associations.OrderBy(l=>l.NOMASSO).ToPagedList(Page ,PageSize));
+            else
+                return View(db.Associations.Where(f=>f.NOMASSO.Contains(SearchString) || f.SIGLEASSO.Contains(SearchString)).OrderBy(l => l.NOMASSO).ToPagedList(Page, PageSize));
+
         }
 
         // GET: Association/Details/5
@@ -47,7 +55,7 @@ namespace JedjanguiWeb.Controllers
         {
             if(id != null)
             {
-         Session["CODEASSO"] = id;
+           Session["CODEASSO"] = id;
             return RedirectToAction("Index", "Membre");
             }
             else

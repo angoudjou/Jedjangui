@@ -1,5 +1,5 @@
-﻿@model IEnumerable<JedjanguiWeb.Models.Membre>
-
+﻿@model PagedList.IPagedList<JedjanguiWeb.Models.Membre>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
 }
@@ -11,137 +11,68 @@
 </p>
 <table class="table">
     <tr>
+       
         <th>
-            @Html.DisplayNameFor(model => model.association.NOMASSO)
+            codeMembre
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MEM_CODEMEMBRE)
+           Nom
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NOMMEMBRE)
+           Date d'adhession
+        </th>
+       
+        <th>
+          STATUTMEMBRE
+        </th>
+        
+        <th>
+            TITREMEMBRE
+        </th>
+       
+        <th>
+           ELOGE
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DATEADEHSIONMEMEBRE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DATEDEMISSION)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DATENAISSANCEMEMBRE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.STATUTMEMBRE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FONCTIONMEMBRE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TELMEMBRE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RESIDENCEMEMEBRE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ADRESSEMEMEBRE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SEXEMEMBRE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.STATUTMATRIMONIALE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EMAILMEMBRE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NOMBREENFANT)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NOTEMEMBRE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TITREMEMBRE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TYPEMEMBRE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ELOGE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MATRICULE)
+           MATRICULE
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.association.NOMASSO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MEM_CODEMEMBRE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NOMMEMBRE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DATEADEHSIONMEMEBRE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DATEDEMISSION)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DATENAISSANCEMEMBRE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.STATUTMEMBRE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FONCTIONMEMBRE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TELMEMBRE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RESIDENCEMEMEBRE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ADRESSEMEMEBRE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SEXEMEMBRE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.STATUTMATRIMONIALE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EMAILMEMBRE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NOMBREENFANT)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NOTEMEMBRE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TITREMEMBRE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TYPEMEMBRE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ELOGE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MATRICULE)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CODEMEMBRE }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CODEMEMBRE }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CODEMEMBRE })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.MEM_CODEMEMBRE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOMMEMBRE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DATEADEHSIONMEMEBRE)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.STATUTMEMBRE)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.TITREMEMBRE)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.ELOGE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MATRICULE)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CODEMEMBRE }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CODEMEMBRE }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CODEMEMBRE })
+            </td>
+        </tr>
+    }
 
 </table>

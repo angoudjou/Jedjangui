@@ -12,6 +12,7 @@
             </li>
             <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
         </ul>
+
     }
 }
 else
@@ -22,16 +23,4 @@ else
     </ul>
 }
 
-    <div class=" nav col-lg-12">
-
-
-        @if (Session["CODEASSO"] != null)
-    {
-        <ul class="navbar nav-justified">
-            <li> @Session["CODEASSO"] </li>
-            <li> @Html.ActionLink("Association", "Index", "Association") </li>
-            <li> @Html.ActionLink("Membres", "Index", "Membre") </li>
-            <li> @Html.ActionLink("Fonds", "Index", "Fond") </li>
-        </ul>
-       }
-    </div>
+   

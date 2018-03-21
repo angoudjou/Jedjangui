@@ -17,13 +17,23 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("JedjanguiOnline", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                                   
+
+
+                        @if (Session["CODEASSO"] != null)
+        {
+                   <li> @Session["CODEASSO"] </li>
+                    <li> @Html.ActionLink("Association", "Index", "Association") </li>
+                    <li> @Html.ActionLink("Membres", "Index", "Membre") </li>
+                    <li> @Html.ActionLink("Fonds", "Index", "Fond") </li>
+             
+}
+                    
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

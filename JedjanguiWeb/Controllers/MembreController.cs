@@ -8,18 +8,37 @@ using System.Web;
 using System.Web.Mvc;
 using JedjanguiWeb.DAL;
 using JedjanguiWeb.Models;
+using PagedList;
 
 namespace JedjanguiWeb.Controllers
 {
     public class MembreController : Controller
     {
         private JeDjanguiContext db = new JeDjanguiContext();
-
+        int pageSize;
+        int codeasso;
         // GET: Membre
-        public ActionResult Index()
-        {
-            var membres = db.Membres.Include(m => m.association);
-            return View(membres.ToList());
+        public ActionResult Index( int page=1, string SearchString="")
+         {
+            if(Session["CODEASSO"] !=null)
+             codeasso  = int.Parse(Session["CODEASSO"].ToString());
+
+            pageSize = int.Parse(Session["PageSize"].ToString());
+            // = db.Membres.Include(m => m.association);
+            List<Membre> membres = db.Membres.OrderBy(h => h.NOMMEMBRE).ToList();
+
+           // membres = membres.Where(g => g.CODEASSO.Equals(codeasso));
+
+            if (codeasso!=null)
+                membres = membres.Where(g => g.CODEASSO.Equals(codeasso)).ToList();
+
+            if (!string.IsNullOrEmpty(SearchString))
+                membres = membres.Where(f => f.NOMMEMBRE.Contains(SearchString)).ToList();
+
+            
+            return View(membres.ToPagedList(page, pageSize));
+           
+           
         }
 
         // GET: Membre/Details/5
@@ -49,10 +68,12 @@ namespace JedjanguiWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CODEMEMBRE,MEM_CODEMEMBRE,CODEASSO,NOMMEMBRE,DATEADEHSIONMEMEBRE,DATEDEMISSION,DATENAISSANCEMEMBRE,STATUTMEMBRE,FONCTIONMEMBRE,TELMEMBRE,RESIDENCEMEMEBRE,ADRESSEMEMEBRE,SEXEMEMBRE,STATUTMATRIMONIALE,EMAILMEMBRE,NOMBREENFANT,NOTEMEMBRE,TITREMEMBRE,TYPEMEMBRE,ELOGE,MATRICULE")] Membre membre)
+        public ActionResult Create([Bind(Include = "NOMMEMBRE,DATEADEHSIONMEMEBRE,DATEDEMISSION,DATENAISSANCEMEMBRE,STATUTMEMBRE,FONCTIONMEMBRE,TELMEMBRE,RESIDENCEMEMEBRE,ADRESSEMEMEBRE,SEXEMEMBRE,STATUTMATRIMONIALE,EMAILMEMBRE,NOMBREENFANT,NOTEMEMBRE,TITREMEMBRE,TYPEMEMBRE,ELOGE,MATRICULE")] Membre membre)
         {
             if (ModelState.IsValid)
             {
+                membre.CODEASSO = int.Parse(Session["CODEASSO"].ToString());
+
                 db.Membres.Add(membre);
                 db.SaveChanges();
                 return RedirectToAction("Index");

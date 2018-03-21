@@ -14,11 +14,16 @@ namespace JedjanguiWeb.Controllers
     public class FondController : Controller
     {
         private JeDjanguiContext db = new JeDjanguiContext();
-
+        int codeasso=0;
         // GET: Fond
         public ActionResult Index()
         {
-            var fonds = db.Fonds.Include(f => f.ASSOCIATION);
+            if (Session["CODEASSO"] != null)
+                codeasso = int.Parse(Session["CODEASSO"].ToString());
+
+            var fonds = db.Fonds.Where(c => c.CODEASSO.Equals(codeasso));
+                //.Include(f => f.ASSOCIATION);
+
             return View(fonds.ToList());
         }
 
@@ -53,6 +58,7 @@ namespace JedjanguiWeb.Controllers
         {
             if (ModelState.IsValid)
             {
+                fond.CODEASSO = int.Parse(Session["CODEASSO"].ToString());
                 db.Fonds.Add(fond);
                 db.SaveChanges();
                 return RedirectToAction("Index");
