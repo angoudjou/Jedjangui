@@ -66,6 +66,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -198,21 +200,28 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AssociationController.cs" />
+    <Compile Include="Controllers\ExerciceController.cs" />
     <Compile Include="Controllers\FondController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoanController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MembreController.cs" />
+    <Compile Include="Controllers\SeanceController.cs" />
     <Compile Include="DAL\JeDjanguiContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Association.cs" />
+    <Compile Include="Models\InscrisExercice.cs" />
+    <Compile Include="Models\Exercice.cs" />
     <Compile Include="Models\Fond.cs" />
+    <Compile Include="Models\FondMembre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Membre.cs" />
+    <Compile Include="Models\Seance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -290,6 +299,19 @@
     <Content Include="Views\Fond\Details.cshtml" />
     <Content Include="Views\Fond\Edit.cshtml" />
     <Content Include="Views\Fond\Index.cshtml" />
+    <Content Include="Views\Exercice\Create.cshtml" />
+    <Content Include="Views\Exercice\Delete.cshtml" />
+    <Content Include="Views\Exercice\Details.cshtml" />
+    <Content Include="Views\Exercice\Edit.cshtml" />
+    <Content Include="Views\Exercice\Index.cshtml" />
+    <Content Include="Views\Seance\Create.cshtml" />
+    <Content Include="Views\Seance\Delete.cshtml" />
+    <Content Include="Views\Seance\Details.cshtml" />
+    <Content Include="Views\Seance\Edit.cshtml" />
+    <Content Include="Views\Seance\Index.cshtml" />
+    <Content Include="Views\Exercice\Inscris.cshtml" />
+    <Content Include="Views\Exercice\Inscrire.cshtml" />
+    <Content Include="Views\Exercice\InscrireMembre.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

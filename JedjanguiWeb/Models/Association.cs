@@ -1,23 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace JedjanguiWeb.Models
 {
+   // [Authorize]
     public class Association
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long CODEASSO { get; set; }
         [Required]
         public string NOMASSO { get; set; }
         [Required]
         public string BUTASSO { get; set; }
+
+        public string EMAIL { get; set; }
+        [Required]
         public string SIGLEASSO { get; set; }
         public DateTime? DATECREATIONASS { get; set; }
         public DateTime? DATEAJOUTER { get; set; } = DateTime.Now;
-        public string STATUTASSO { get; set; } = "A";
+        public Boolean STATUTASSO { get; set; } =true;
         public string COMPTABANKASSO { get; set; }
         public string BANQUEASSO { get; set; }
         public string SLOGANASSO { get; set; }
@@ -26,12 +33,17 @@ namespace JedjanguiWeb.Models
         public string LIEURENCONTRE { get; set; }
         public string CODEUTILISATEUR { get; set; }
 
-     public   virtual ICollection<Membre> Membres { get; set; }
-     public virtual ICollection<Fond> Fonds { get; set; }
+     public   virtual ICollection<Membre> Membre { get; set; }
+     public virtual   List<Fond> Fond { get; set; }
+     public virtual ICollection<Exercice> Exercice { get; set; }
+
         public Association ()
         {
-            Membres = new List<Membre>();
-            Fonds = new List<Fond>();
+         
+                    
+                Membre = new List<Membre>();
+            Fond = new List<Fond>();
+            Exercice = new List<Exercice>();
 
         }
 

@@ -28,6 +28,8 @@ C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\Microsoft.Owin.
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\Newtonsoft.Json.dll
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\Owin.dll
+C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\PagedList.dll
+C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\PagedList.Mvc.dll
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\System.Web.Helpers.dll
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\System.Web.Mvc.dll
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\System.Web.Optimization.dll
@@ -36,7 +38,11 @@ C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\System.Web.WebP
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\System.Web.WebPages.dll
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\System.Web.WebPages.Razor.dll
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\WebGrease.dll
+C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\EntityFramework.xml
+C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\EntityFramework.SqlServer.xml
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\PagedList.xml
+C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\PagedList.Mvc.xml
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\System.Web.Helpers.xml
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\System.Web.Mvc.xml
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\System.Web.Optimization.xml
@@ -46,8 +52,6 @@ C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\System.Web.WebP
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\System.Web.WebPages.Razor.xml
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\Antlr3.Runtime.pdb
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\Newtonsoft.Json.xml
-C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\EntityFramework.xml
-C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\EntityFramework.SqlServer.xml
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\Microsoft.AspNet.Identity.Core.xml
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\Microsoft.AspNet.Identity.EntityFramework.xml
@@ -66,11 +70,7 @@ C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\Microsoft.AI.Se
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\Microsoft.AI.Web.xml
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.csproj.CoreCompileInputs.cache
+C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.csproj.CopyComplete
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.dll
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.pdb
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.csprojResolveAssemblyReference.cache
-C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\PagedList.dll
-C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\PagedList.Mvc.dll
-C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\PagedList.xml
-C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\PagedList.Mvc.xml
-C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.csproj.CopyComplete

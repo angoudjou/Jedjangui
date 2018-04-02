@@ -79,6 +79,7 @@ namespace JedjanguiWeb.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    Session["Email"] = model.Email;
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");

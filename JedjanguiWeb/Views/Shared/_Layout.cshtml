@@ -22,23 +22,46 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                                   
 
+                    @if (Session["CODEASSO"] != null)
+    {
 
-                        @if (Session["CODEASSO"] != null)
-        {
-                   <li> @Session["CODEASSO"] </li>
-                    <li> @Html.ActionLink("Association", "Index", "Association") </li>
-                    <li> @Html.ActionLink("Membres", "Index", "Membre") </li>
-                    <li> @Html.ActionLink("Fonds", "Index", "Fond") </li>
-             
+                <li> @Html.ActionLink("Association", "Index", "Association") </li>
+                <li> @Html.ActionLink("Membres", "Index", "Membre") </li>
+                <li> @Html.ActionLink("Fonds", "Index", "Fond") </li>
+                <li> @Html.ActionLink("Exercice", "Index", "Exercice") </li>
+                <li> @Html.ActionLink("Seances", "Index", "Seance") </li>
+
 }
-                    
+
                 </ul>
                 @Html.Partial("_LoginPartial")
+
+
             </div>
+
+           
+
+
+            @if (Session["NOMASSO"] != null)
+    {
+        <ul class="nav navbar-nav navbar-default ">
+            <li> @Session["NOMASSO"]</li>
+        </ul>
+}
+
         </div>
     </div>
+    @if(Session["CODEEXO"] != null)
+    {
+        <div>
+            <ul class="nav nav-justified">
+    <li><@Html.ActionLink("Membres Inscris", "Inscris", "Exercice")</li>
+    <li><@Html.ActionLink("Seances", "Index", "Seance", new { codeexo = Session["CODEEXO"].ToString() })</li>
+</ul>
+
+        </div>
+    }
     <div class="container body-content">
         @RenderBody()
         <hr />

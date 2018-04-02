@@ -1,0 +1,82 @@
+﻿@model JedjanguiWeb.Models.Seance
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Seance</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Exercices.STATUTEXO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exercices.STATUTEXO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATESEANCE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATESEANCE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEBUTSEANCE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEBUTSEANCE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FINSEANCE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FINSEANCE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUTSEANCE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUTSEANCE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMSEANCE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMSEANCE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LIEUSEANCE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LIEUSEANCE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COMPTERENDUSEANCE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COMPTERENDUSEANCE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CODESEANCE }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

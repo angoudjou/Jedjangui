@@ -20,14 +20,17 @@
 <table class="table  table-striped table-hover table-bordered">
     <tr>
         <th>
+            Owner
+        </th>
+        <th>
             Nom
         </th>
 
         <th>
-           sigle
+            sigle
         </th>
         <th>
-           dateajouté
+            dateajouté
         </th>
 
         <th>
@@ -41,31 +44,34 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NOMASSO)
-            </td>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOMASSO)
+        </td>
 
-            <td>
-                @Html.DisplayFor(modelItem => item.SIGLEASSO)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DATEAJOUTER)
-            </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SIGLEASSO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATEAJOUTER)
+        </td>
 
-            <td>
-                @Html.DisplayFor(modelItem => item.SLOGANASSO)
-            </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SLOGANASSO)
+        </td>
 
 
-            <td>
-                @Html.ActionLink("Ouvrir", "Ouvrir", new { id = item.CODEASSO }) |
-                @Html.ActionLink("Edit", "Edit", new { id = item.CODEASSO }) |
-                @Html.ActionLink("Details", "Details", new { id = item.CODEASSO }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.CODEASSO }) |
-                @Html.ActionLink("Ouvrir", "Ouvrir", new { id = item.CODEASSO })
-            </td>
-        </tr>
+        <td>
+            @Html.ActionLink("Ouvrir", "Ouvrir", new { id = item.CODEASSO }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.CODEASSO }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CODEASSO }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.CODEASSO }) |
+            @Html.ActionLink("Ouvrir", "Ouvrir", new { id = item.CODEASSO })
+        </td>
+    </tr>
     }
 
 </table>

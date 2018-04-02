@@ -13,7 +13,13 @@ namespace JedjanguiWeb.Controllers
             //taken of session parameters and redirect to the list of associations
             Session["PageSize"] = 3;
 
-            return RedirectToAction("Index","Association");
+           
+            if(Session["Email"] !=null)
+            {
+
+            }
+
+ return RedirectToAction("Index","Association");
             
         }
 

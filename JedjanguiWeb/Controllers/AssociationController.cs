@@ -22,10 +22,22 @@ namespace JedjanguiWeb.Controllers
         {
             ViewBag.SearchString = SearchString;
             PageSize =int.Parse( Session["PageSize"].ToString());
-            if(string.IsNullOrEmpty(SearchString))
-            return View(db.Associations.OrderBy(l=>l.NOMASSO).ToPagedList(Page ,PageSize));
+            List<Association> asso = db.Associations.ToList();
+
+            //if logged, we select the list of his associations
+            if (Session["Email"] != null)
+            {
+                asso = asso.Where(f => f.EMAIL == Session["Email"].ToString()).ToList();
+  //if his has only 1 association then we open directly
+            if (asso.Count() == 1)
+                  return   RedirectToAction("Ouvrir", "Association", new { id = asso.First().CODEASSO });
+
+            }
+          
+            if (string.IsNullOrEmpty(SearchString))
+            return View(asso.OrderBy(l=>l.NOMASSO).ToPagedList(Page ,PageSize));
             else
-                return View(db.Associations.Where(f=>f.NOMASSO.Contains(SearchString) || f.SIGLEASSO.Contains(SearchString)).OrderBy(l => l.NOMASSO).ToPagedList(Page, PageSize));
+                return View(asso.Where(f=>f.NOMASSO.Contains(SearchString) || f.SIGLEASSO.Contains(SearchString)).OrderBy(l => l.NOMASSO).ToPagedList(Page, PageSize));
 
         }
 
@@ -55,7 +67,9 @@ namespace JedjanguiWeb.Controllers
         {
             if(id != null)
             {
+                Association asso = db.Associations.Find(id);
            Session["CODEASSO"] = id;
+                Session["NOMASSO"] = asso.SIGLEASSO + "- " +asso.NOMASSO;
             return RedirectToAction("Index", "Membre");
             }
             else
@@ -73,9 +87,42 @@ namespace JedjanguiWeb.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (Session["Email"] != null)
+
+                  association. EMAIL = Session["Email"].ToString();
+
                 db.Associations.Add(association);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                // defaul =t exercice and
+                Exercice exo = new Exercice();
+                exo.CODEASSO = association.CODEASSO;
+                exo.DEBUTEXO = DateTime.Now;
+                exo.FINEXO = DateTime.Now.AddYears(1);
+
+                db.Exercices.Add(exo);
+                db.SaveChanges();
+                // default seance
+                Seance seance = new Seance();
+                seance.CODEEXO = exo.CODEEXO;
+                seance.DATESEANCE = DateTime.Now;
+                seance.DEBUTSEANCE = DateTime.Now;
+                seance.NOMSEANCE = "Meeting 1";
+
+                db.Seances.Add(seance);
+                db.SaveChanges();
+
+                //default fund
+                Fond f = new Fond();
+                f.CODEASSO = association.CODEASSO;
+                f.NOMFOND = "Sanctions";
+                f.OBLIGATOIRE = true;
+                f.OBJECTIFFOND = "Caisse des sanctions";
+
+                db.Fonds.Add(f);
+                db.SaveChanges();
+
+
+                return RedirectToAction("Ouvrir", "Association", new { id = association.CODEASSO });
             }
 
             return View(association);

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<JedjanguiWeb.Models.Exercice>
+
+@{
+    ViewBag.Title = "Liste des exercices";
+}
+
+<h2>Liste des exercices</h2>
+
+<p>
+    @Html.ActionLink("Create New exercice", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ASSOCIATION.NOMASSO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEBUTEXO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FINEXO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STATUTEXO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOMEXO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FINSAISIE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ASSOCIATION.NOMASSO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEBUTEXO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FINEXO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STATUTEXO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOMEXO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FINSAISIE)
+        </td>
+        <td>
+            @Html.ActionLink("Ouvrir", "Ouvrir", new { id = item.CODEEXO }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.CODEEXO }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CODEEXO }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.CODEEXO }) 
+
+        </td>
+    </tr>
+}
+
+</table>

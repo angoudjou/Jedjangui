@@ -1,0 +1,39 @@
+﻿@model IEnumerable<JedjanguiWeb.Models.InscrisExercice>
+
+@{
+    ViewBag.Title = "Inscris";
+}
+
+<h2>Inscris</h2>
+
+<p>
+    @Html.ActionLink("Create New Inscris", "InscrireMembre")
+</p>
+<table class="table">
+    <tr>
+        <th>
+          Nom
+        </th>
+        <th>
+          Responsabilité
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MEMBRE.NOMMEMBRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POSTEMEMBREEXO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Incrire", new { id=item.CODEINSCRIPTION }) |
+           
+            @Html.ActionLink("Delete", "Delete", new { id=item.CODEINSCRIPTION })
+        </td>
+    </tr>
+}
+
+</table>

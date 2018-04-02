@@ -1,0 +1,66 @@
+﻿@model JedjanguiWeb.Models.Exercice
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Exercice</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ASSOCIATION.NOMASSO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ASSOCIATION.NOMASSO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEBUTEXO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEBUTEXO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FINEXO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FINEXO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUTEXO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUTEXO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMEXO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMEXO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FINSAISIE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FINSAISIE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CODEEXO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
