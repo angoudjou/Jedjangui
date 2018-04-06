@@ -24,15 +24,15 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
 
                     @if (Session["CODEASSO"] != null)
-    {
+                    {
 
-                <li> @Html.ActionLink("Association", "Index", "Association") </li>
-                <li> @Html.ActionLink("Membres", "Index", "Membre") </li>
-                <li> @Html.ActionLink("Fonds", "Index", "Fond") </li>
-                <li> @Html.ActionLink("Exercice", "Index", "Exercice") </li>
-                <li> @Html.ActionLink("Seances", "Index", "Seance") </li>
+                        <li> @Html.ActionLink("Association", "Index", "Association") </li>
+                        <li> @Html.ActionLink("Membres", "Index", "Membre") </li>
+                        <li> @Html.ActionLink("Fonds", "Index", "Fond") </li>
+                        <li> @Html.ActionLink("Exercice", "Index", "Exercice") </li>
+                        <li> @Html.ActionLink("Seances", "Index", "Seance") </li>
 
-}
+                    }
 
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -40,25 +40,41 @@
 
             </div>
 
-           
+
 
 
             @if (Session["NOMASSO"] != null)
-    {
-        <ul class="nav navbar-nav navbar-default ">
-            <li> @Session["NOMASSO"]</li>
-        </ul>
-}
+            {
+                <ul class="nav navbar-nav navbar-default ">
+                    <li> @Session["NOMASSO"]</li>
+                </ul>
+            }
 
         </div>
     </div>
-    @if(Session["CODEEXO"] != null)
+    @if (Session["CODEEXO"] != null)
     {
         <div>
             <ul class="nav nav-justified">
-    <li><@Html.ActionLink("Membres Inscris", "Inscris", "Exercice")</li>
-    <li><@Html.ActionLink("Seances", "Index", "Seance", new { codeexo = Session["CODEEXO"].ToString() })</li>
-</ul>
+                <li><@Html.ActionLink("Membres Inscris", "Inscris", "Exercice")</li>
+                <li><@Html.ActionLink("Soldes des fond", "balance", "FOND")</li>
+                <li><@Html.ActionLink("Seances", "Index", "Seance", new { codeexo = Session["CODEEXO"].ToString() })</li>
+            </ul>
+
+        </div>
+    }
+    @if (Session["CODESEANCE"] != null)
+    {
+        <div>
+            <ul class="nav nav-justified">
+                <li>@Html.ActionLink("Presence", "Presence", "Seance")</li>
+                <li>@Html.ActionLink("Soldes des fonds", "balance", "Seance")</li>
+                <li>@Html.ActionLink("Tontine", "Mouvementfond", "Seance")</li>
+                <li>@Html.ActionLink("Djangui", "Mouvementfond", "Seance")</li>
+                <li>@Html.ActionLink("Mouvement Financiers", "Mouvementfond", "Seance")</li>
+
+                <li>@Html.ActionLink("Seances", "Index", "Seance", new { codeexo = Session["CODEEXO"].ToString() })</li>
+            </ul>
 
         </div>
     }

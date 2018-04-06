@@ -69,8 +69,11 @@ C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\Microsoft.AI.De
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\bin\Microsoft.AI.Web.xml
+C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.csprojResolveAssemblyReference.cache
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.csproj.CoreCompileInputs.cache
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.csproj.CopyComplete
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.dll
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.pdb
-C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.csprojResolveAssemblyReference.cache
+C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.Migrations.initial.resources
+C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.csproj.GenerateResource.cache
+C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.Migrations.second.resources

@@ -9,19 +9,24 @@ namespace JedjanguiWeb.Models
 {
     public class FondMembre
     {
+      
+       [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long CODEFONDMEMEBRE { get; set; }
-        public long CODEMEMBRE { get; set; }
-        public long CODEFOND { get; set; }
-        public long CODEEXO { get; set; }
+        public long CODEINSCRIPTIONEXERCICE { get; set; }
+        public long CODEFOND  { get; set; }
 
-        public ICollection< Membre> membre { get; set; }
-        public virtual ICollection< Fond> fond { get; set; }
-        public virtual ICollection<Exercice> Exercice { get; set; }
+        public double  DEBIT { get; set; }  
+        public double  CREDIT { get; set; } 
+        public double  SOLDE { get; set; } 
+
+ 
+        public virtual InscrisExercice  INSCRISEXERCICE{ get; set; }
+        public virtual Fond FOND { get; set; }
+
         public FondMembre()
         {
-
+                
         }
     }
 }

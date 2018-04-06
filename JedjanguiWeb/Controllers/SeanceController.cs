@@ -150,6 +150,7 @@ namespace JedjanguiWeb.Controllers
             ViewBag.CODEEXO = new SelectList(db.Exercices, "CODEEXO", "STATUTEXO", seance.CODEEXO);
             Session["CODESEANCE" ]= seance.CODESEANCE;
 
+            //we should return to the menu of the seance
             return RedirectToAction("Index");
         }
 

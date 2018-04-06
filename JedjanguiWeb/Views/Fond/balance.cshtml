@@ -1,0 +1,59 @@
+﻿@model IEnumerable<JedjanguiWeb.Models.SoldeFond>
+
+@{
+    ViewBag.Title = "balance";
+}
+
+<h2>balance</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           
+          .NOMEXO 
+        </th>
+         
+        <th>
+            @Html.DisplayNameFor(model => model.NOMFOND)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEBIT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CREDIT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SOLDE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODEEXERCICE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOMFOND)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.DEBIT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CREDIT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SOLDE)
+        </td>
+        <td>
+           @Html.ActionLink("Details", "Details", new { id=item.CODEFOND }) |
+           @Html.ActionLink("Delete", "Delete", new { id=item.CODEFOND })
+        </td>
+    </tr>
+}
+
+</table>

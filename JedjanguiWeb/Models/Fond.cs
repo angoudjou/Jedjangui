@@ -19,10 +19,11 @@ namespace JedjanguiWeb.Models
         public string TYPEFOND { get; set; }
 
         public Association ASSOCIATION { get; set; }
+        public virtual ICollection<FondMembre> FondMembre { get; set; }
 
         public Fond()
         {
-
+            FondMembre = new List<FondMembre>();
         }
     }
 }

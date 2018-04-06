@@ -11,7 +11,7 @@ namespace JedjanguiWeb.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long CODEINSCRIPTION { get; set; }
+        public long CODEINSCRIPTIONEXERCICE { get; set; }
         public long CODEMEMBRE { get; set; }
         public long CODEEXO { get; set; }
         public string POSTEMEMBREEXO { get; set; }
@@ -19,10 +19,11 @@ namespace JedjanguiWeb.Models
 
         public virtual Exercice EXERCICE { get; set; }
         public virtual Membre MEMBRE { get; set; }
+        public  virtual List<FondMembre> FondMembres  { get; set; }
 
-        public InscrisExercice()
+    public InscrisExercice()
         {
-                
+            FondMembres = new List<FondMembre>();
         }
     }
 }

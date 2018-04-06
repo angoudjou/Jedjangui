@@ -12,7 +12,7 @@ namespace JedjanguiWeb.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long CODEMEMBRE { get; set; }
-        public long? MEM_CODEMEMBRE { get; set; }
+        //public long? MEM_CODEMEMBRE { get; set; }
         public long CODEASSO { get; set; }
         public string NOMMEMBRE { get; set; }
         public DateTime? DATEADEHSIONMEMEBRE { get; set; }
@@ -34,7 +34,14 @@ namespace JedjanguiWeb.Models
         public string MATRICULE { get; set; }
 
         public virtual ICollection<InscrisExercice> InscrisExercices { get; set; }
+         
+
         public Association  association {get; set;}
-    
+
+        public Membre()
+        {
+            InscrisExercices = new List< InscrisExercice>();
+           // FondMembres = new List<FondMembre>();
+        }
     }
 }

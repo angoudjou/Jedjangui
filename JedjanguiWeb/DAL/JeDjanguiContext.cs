@@ -12,6 +12,11 @@ namespace JedjanguiWeb.DAL
 
         public JeDjanguiContext() : base()
         {
+            //Configuration.LazyLoadingEnabled = true;
+            //Configuration.ProxyCreationEnabled = true;
+            //Configuration.AutoDetectChangesEnabled = true;
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<JeDjanguiContext, Migrations.Configuration>());
+          ///  Database.SetInitializer(new  MigrateDatabaseToLatestVersion<SchoolDBContext, EF6Console.Migrations.Configuration>());
 
 
         }
@@ -21,7 +26,7 @@ namespace JedjanguiWeb.DAL
         public DbSet<Membre> Membres { get; set; }
 
         public DbSet<Fond> Fonds { get; set; }
-
+        public DbSet<FondMembre> FondMembres { get; set; }
         public DbSet<Exercice> Exercices { get; set; }
         public DbSet <InscrisExercice> Inscrisexercices { get; set; }
 

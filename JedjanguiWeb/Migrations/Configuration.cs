@@ -10,7 +10,6 @@ namespace JedjanguiWeb.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "JedjanguiWeb.DAL.JeDjanguiContext";
         }
 
         protected override void Seed(JedjanguiWeb.DAL.JeDjanguiContext context)

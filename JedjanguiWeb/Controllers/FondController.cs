@@ -135,5 +135,62 @@ namespace JedjanguiWeb.Controllers
             }
             base.Dispose(disposing);
         }
+        //lis of members of this found
+        public ActionResult Incris(int codefond)
+        {
+          int   codeasso = int.Parse(Session["CODEEXO"].ToString());
+
+         return View(db.FondMembres.Where(d => d.INSCRISEXERCICE.CODEEXO == codeasso && d.CODEFOND == codefond));
+
+        }
+        public ActionResult balance(int? codeexo)
+        {
+            if(codeasso == null)
+            {
+                codeasso = int.Parse(Session["CODEEXO"].ToString());
+            }
+            //List<FondMembre> balance = db.FondMembres.AsNoTracking().Where(c => c.INSCRISEXERCICE.CODEEXO == codeasso).ToList();
+            var balance = (from elt in db.FondMembres.AsNoTracking().Where(c => c.INSCRISEXERCICE.CODEEXO == codeasso)
+                           select new
+                           {
+                               elt.FOND.NOMFOND,
+                                   elt.CODEFOND,
+                                   DEBIT = db.FondMembres.Where(h => h.CODEFOND == elt.CODEFOND).Sum(s => s.DEBIT),
+                                   CREDIT = db.FondMembres.Where(h => h.CODEFOND == elt.CODEFOND).Sum(s => s.CREDIT),
+                                  
+                               }).ToList();
+
+            List < SoldeFond> Situation = new List<SoldeFond>();
+            SoldeFond f;
+            balance.ForEach(
+                s=> {
+                    f = new SoldeFond();
+                    f.CODEFOND = s.CODEFOND;
+                    f.NOMFOND = s.NOMFOND;
+                    f.CODEEXERCICE = codeexo;
+                    f.DEBIT = s.DEBIT;
+                    f.CREDIT = s.CREDIT;
+                    f.SOLDE = s.DEBIT - s.CREDIT;
+
+                    Situation.Add(f);
+                });
+               
+
+           
+                     
+            return View(Situation);
+        }
+        [HttpGet]
+        public ActionResult InscrireMembre()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult IncrireMembre(FondMembre fm)
+        {
+
+            return View("inscirs");
+        }
+
     }
 }

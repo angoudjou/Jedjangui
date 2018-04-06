@@ -19,13 +19,14 @@ namespace JedjanguiWeb.Models
 
         public virtual Association ASSOCIATION { get; set; }
         //public virtual ICollection<FONDEXERCICE> FONDEXERCICE { get; set; }
-        public virtual ICollection<FondMembre> FONDMEMBRE { get; set; }
+       // public virtual ICollection<FondMembre> FONDMEMBRE { get; set; }
          public virtual ICollection<InscrisExercice> InscrisExercices { get; set; }
         public virtual ICollection<Seance> SEANCE { get; set; }
 
         public Exercice()
         {
-
+            InscrisExercices = new List<InscrisExercice>();
+            SEANCE = new List<Seance>();
         }
     }
 }
