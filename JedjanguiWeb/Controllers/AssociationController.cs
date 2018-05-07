@@ -70,7 +70,24 @@ namespace JedjanguiWeb.Controllers
                 Association asso = db.Associations.Find(id);
            Session["CODEASSO"] = id;
                 Session["NOMASSO"] = asso.SIGLEASSO + "- " +asso.NOMASSO;
-            return RedirectToAction("Index", "Membre");
+
+                //exercices, we take the last if the 
+                Exercice exo = db.Exercices.Where(g => g.CODEASSO == id && g.STATUTEXO == true).OrderByDescending(h => h.CODEEXO).FirstOrDefault();
+                if(exo == null)
+                    exo = db.Exercices.Where(g => g.CODEASSO == id  ).OrderByDescending(h=>h.CODEEXO).FirstOrDefault();
+                
+                //seance, we take the last seance
+                if (exo != null)
+                {
+                    Session["CODEEXO"] = exo.CODEEXO;
+                    Seance sc = db.Seances.Where(g => g.CODEEXO == exo.CODEEXO).OrderByDescending(t => t.CODESEANCE).FirstOrDefault();
+                    //if (sc == null )
+                    //    sc = db.Seances.Where(g => g.CODEEXO == exo.CODEEXO).OrderByDescending(t => t.CODESEANCE).FirstOrDefault();
+                    if(sc != null)
+                        Session["CODESEANCE"] = sc.CODESEANCE;
+                }
+
+                return RedirectToAction("Index", "Membre");
             }
             else
                 return HttpNotFound();

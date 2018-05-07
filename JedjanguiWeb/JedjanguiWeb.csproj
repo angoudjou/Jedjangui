@@ -206,6 +206,7 @@
     <Compile Include="Controllers\LoanController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MembreController.cs" />
+    <Compile Include="Controllers\PretController.cs" />
     <Compile Include="Controllers\SeanceController.cs" />
     <Compile Include="DAL\JeDjanguiContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -219,9 +220,14 @@
     <Compile Include="Migrations\201804051337024_second.Designer.cs">
       <DependentUpon>201804051337024_second.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805061618274_pret.cs" />
+    <Compile Include="Migrations\201805061618274_pret.Designer.cs">
+      <DependentUpon>201805061618274_pret.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Association.cs" />
+    <Compile Include="Models\FondSeance.cs" />
     <Compile Include="Models\InscrisExercice.cs" />
     <Compile Include="Models\Exercice.cs" />
     <Compile Include="Models\Fond.cs" />
@@ -229,6 +235,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Membre.cs" />
+    <Compile Include="Models\Pret.cs" />
     <Compile Include="Models\Seance.cs" />
     <Compile Include="Models\SoldeFond.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -323,6 +330,8 @@
     <Content Include="Views\Exercice\InscrireMembre.cshtml" />
     <Content Include="Views\Fond\balance.cshtml" />
     <Content Include="Views\Fond\balance - Copy.cshtml" />
+    <Content Include="Views\Pret\Index.cshtml" />
+    <Content Include="Views\Pret\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -347,6 +356,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804051337024_second.resx">
       <DependentUpon>201804051337024_second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805061618274_pret.resx">
+      <DependentUpon>201805061618274_pret.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

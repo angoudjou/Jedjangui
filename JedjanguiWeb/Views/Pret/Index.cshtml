@@ -1,0 +1,116 @@
+﻿@model PagedList.IPagedList<JedjanguiWeb.Models.Pret>
+
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<form class="form-group" action="~/Pret/Index">
+    @Html.Label("Chercher")
+    <input type="search" name="SearchString" value=@ViewBag.SearchString>
+    <input type="submit" class="btn btn-default" />
+</form>
+
+<table class="table">
+    <tr>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().MEMBRE.NOMMEMBRE)
+           
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().FOND.NOMFOND)
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().MONTANTPRET)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().MONTANTAREMBOURSER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().MONTANTREMBOURSER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().DATEMISEENPLACE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().SOLDEPRET)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().DATEFINPRET)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().DUREEPRET)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().STATUTPRET)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().INTERETPRET)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().DATEDEBUTPRET)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.MEMBRE.NOMMEMBRE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FOND.NOMFOND)
+
+               
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MONTANTPRET)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MONTANTAREMBOURSER)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MONTANTREMBOURSER)
+            </td>
+            <td>
+               @string.Format("{0:d}",    Html.DisplayFor(modelItem => item.DATEMISEENPLACE))
+                </td>
+<td>
+                @Html.DisplayFor(modelItem => item.SOLDEPRET)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DATEFINPRET  )
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DUREEPRET)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.STATUTPRET)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.INTERETPRET)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DATEDEBUTPRET )
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CODEPRET }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CODEPRET }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CODEPRET })
+            </td>
+        </tr>
+    }
+
+</table>
+<!-- navigation-->
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

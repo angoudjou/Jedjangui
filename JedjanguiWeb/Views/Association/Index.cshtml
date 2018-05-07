@@ -20,21 +20,21 @@
 <table class="table  table-striped table-hover table-bordered">
     <tr>
         <th>
-            Owner
+            @Html.DisplayNameFor(model => model.FirstOrDefault().EMAIL)
         </th>
         <th>
-            Nom
-        </th>
-
-        <th>
-            sigle
-        </th>
-        <th>
-            dateajouté
+            @Html.DisplayNameFor(model => model.FirstOrDefault().NOMASSO)
         </th>
 
         <th>
-            SLOGANASSO
+            @Html.DisplayNameFor(model => model.FirstOrDefault().SIGLEASSO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().DATEAJOUTER)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().SLOGANASSO)
         </th>
 
 

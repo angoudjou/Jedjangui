@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Web;
 
 namespace JedjanguiWeb.DAL
@@ -16,9 +18,9 @@ namespace JedjanguiWeb.DAL
             //Configuration.ProxyCreationEnabled = true;
             //Configuration.AutoDetectChangesEnabled = true;
             //Database.SetInitializer(new MigrateDatabaseToLatestVersion<JeDjanguiContext, Migrations.Configuration>());
-          ///  Database.SetInitializer(new  MigrateDatabaseToLatestVersion<SchoolDBContext, EF6Console.Migrations.Configuration>());
+            ///  Database.SetInitializer(new  MigrateDatabaseToLatestVersion<SchoolDBContext, EF6Console.Migrations.Configuration>());
 
-
+          
         }
 
         public DbSet<Association> Associations { get; set; }
@@ -31,6 +33,11 @@ namespace JedjanguiWeb.DAL
         public DbSet <InscrisExercice> Inscrisexercices { get; set; }
 
         public DbSet<Seance> Seances { get; set; }
+        public DbSet<Pret> Prets { get; set; }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+        }
     }
 }

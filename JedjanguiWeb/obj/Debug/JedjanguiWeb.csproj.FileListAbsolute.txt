@@ -77,3 +77,4 @@ C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\Jedjangui
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.Migrations.initial.resources
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.csproj.GenerateResource.cache
 C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.Migrations.second.resources
+C:\Users\nas\Documents\Association\JedjanguiWeb\JedjanguiWeb\obj\Debug\JedjanguiWeb.Migrations.pret.resources

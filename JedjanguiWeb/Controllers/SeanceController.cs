@@ -126,7 +126,16 @@ namespace JedjanguiWeb.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        //display the list of tontine of the seance
 
+        protected   void tontine(int id)
+        {
+            if(id!= null)
+            {
+                List<Pret> prets;
+
+            }
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)
