@@ -46,7 +46,7 @@ namespace JedjanguiWeb.Controllers
         // GET: Seance/Create
         public ActionResult Create()
         {
-            ViewBag.CODEEXO = new SelectList(db.Exercices, "CODEEXO", "STATUTEXO");
+            ViewBag.CODEEXO = new SelectList(db.Exercices, "CODEEXO", "CODEEXO");
             return View();
         }
 
@@ -55,11 +55,13 @@ namespace JedjanguiWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CODESEANCE,CODEEXO,DATESEANCE,DEBUTSEANCE,FINSEANCE,STATUTSEANCE,NOMSEANCE,LIEUSEANCE,COMPTERENDUSEANCE")] Seance seance)
+        public ActionResult Create([Bind(Include = "CODESEANCE,DATESEANCE,DEBUTSEANCE,FINSEANCE,STATUTSEANCE,NOMSEANCE,LIEUSEANCE,COMPTERENDUSEANCE")] Seance seance)
         {
             if (ModelState.IsValid)
             {
-                db.Seances.Add(seance);
+                seance.CODEEXO = int.Parse(Session["CODEEXO"].ToString());
+            
+                    db.Seances.Add(seance);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

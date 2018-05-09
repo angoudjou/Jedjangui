@@ -39,5 +39,7 @@ namespace JedjanguiWeb.DAL
         {
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
         }
+
+        public System.Data.Entity.DbSet<JedjanguiWeb.Models.Remboursementpret> Remboursementprets { get; set; }
     }
 }

@@ -165,6 +165,13 @@ namespace JedjanguiWeb.Controllers
             else
             {
                 Session["CODEEXO"] = exercice.CODEEXO;
+                Int64 codexo = exercice.CODEEXO;
+                Seance sc = db.Seances.Where(f => f.CODEEXO == codexo).OrderByDescending(t => t.CODESEANCE).FirstOrDefault();
+                //if (sc == null )
+                //    sc = db.Seances.Where(g => g.CODEEXO == exo.CODEEXO).OrderByDescending(t => t.CODESEANCE).FirstOrDefault();
+                if (sc != null)
+                    Session["CODESEANCE"] = sc.CODESEANCE;
+
                 return RedirectToAction("Index", "Seance");
             }
           

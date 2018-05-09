@@ -15,6 +15,8 @@ namespace JedjanguiWeb.Models
         public long CODEMEMBRE { get; set; }
         public long CODEEXO { get; set; }
         public string POSTEMEMBREEXO { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime DATEINSCRIPTION { get; set; } = DateTime.Now;
 
         public virtual Exercice EXERCICE { get; set; }

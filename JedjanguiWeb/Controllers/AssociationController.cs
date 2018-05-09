@@ -69,18 +69,19 @@ namespace JedjanguiWeb.Controllers
             {
                 Association asso = db.Associations.Find(id);
            Session["CODEASSO"] = id;
-                Session["NOMASSO"] = asso.SIGLEASSO + "- " +asso.NOMASSO;
+                Session["NOMASSO"] = id + " - "+ asso.SIGLEASSO + "- " +asso.NOMASSO;
 
                 //exercices, we take the last if the 
                 Exercice exo = db.Exercices.Where(g => g.CODEASSO == id && g.STATUTEXO == true).OrderByDescending(h => h.CODEEXO).FirstOrDefault();
                 if(exo == null)
-                    exo = db.Exercices.Where(g => g.CODEASSO == id  ).OrderByDescending(h=>h.CODEEXO).FirstOrDefault();
+                    exo = db.Exercices.Where(g => g.CODEASSO == id).OrderByDescending(t=>t.CODEEXO).FirstOrDefault();
                 
                 //seance, we take the last seance
                 if (exo != null)
                 {
-                    Session["CODEEXO"] = exo.CODEEXO;
-                    Seance sc = db.Seances.Where(g => g.CODEEXO == exo.CODEEXO).OrderByDescending(t => t.CODESEANCE).FirstOrDefault();
+                    Int64 codexo = exo.CODEEXO;
+                    Session["CODEEXO"] = codexo;// exo.CODEEXO;
+                    Seance sc = db.Seances.Where(f=>f.CODEEXO == codexo ).OrderByDescending(t => t.CODESEANCE).FirstOrDefault();
                     //if (sc == null )
                     //    sc = db.Seances.Where(g => g.CODEEXO == exo.CODEEXO).OrderByDescending(t => t.CODESEANCE).FirstOrDefault();
                     if(sc != null)

@@ -68,12 +68,14 @@
         <div>
             <ul class="nav nav-justified">
                 <li>@Html.ActionLink("Presence", "Presence", "Seance")</li>
-                <li>@Html.ActionLink("Soldes des fonds", "balance", "Seance")</li>
+                <li>@Html.ActionLink("Soldes des fonds", "Balance", "Seance")</li>
                 <li>@Html.ActionLink("Tontine", "Mouvementfond", "Seance")</li>
                 <li>@Html.ActionLink("Djangui", "Mouvementfond", "Seance")</li>
                 <li>@Html.ActionLink("Mouvement Financiers", "Mouvementfond", "Seance")</li>
 
-                <li>@Html.ActionLink("Seances", "Index", "Seance", new { codeexo = Session["CODEEXO"].ToString() })</li>
+                <li>@Html.ActionLink("Remboursement", "Index", "Remboursementpret", new { codeseance = Session["CODESEANCE"].ToString() }, null)</li>
+
+                <li>@Html.ActionLink("Seances", "Index", "Seance", new { codeexo = Session["CODEEXO"].ToString() }, null)</li>
 
                 <li>@Html.ActionLink("Prets", "Index", "Pret")</li>
             </ul>
@@ -85,6 +87,24 @@
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - ASENGO TECHNOLOGIES</p>
+            @{  var exo = "";
+                var sc = "";
+                if (Session["CODEEXO"] != null)
+                {
+                    exo = "Exercice: " + Session["CODEEXO"].ToString();
+                }
+
+
+            if (Session["CODESEANCE"] != null)
+            {
+
+                sc = " Seance " + Session["CODESEANCE"].ToString();
+
+            }   }
+
+            @exo
+            @sc
+
         </footer>
     </div>
 

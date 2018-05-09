@@ -47,9 +47,6 @@
             @Html.DisplayNameFor(model => model.FirstOrDefault().DATEFINPRET)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().DUREEPRET)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.FirstOrDefault().STATUTPRET)
         </th>
         <th>
@@ -59,6 +56,9 @@
             @Html.DisplayNameFor(model => model.FirstOrDefault().DATEDEBUTPRET)
         </th>
         <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().EMAIL)
+        </th>
     </tr>
 
     @foreach (var item in Model)
@@ -66,7 +66,10 @@
         <tr>
             
             <td>
-                @Html.DisplayFor(modelItem => item.MEMBRE.NOMMEMBRE)
+
+                @Html.ActionLink(item.MEMBRE.NOMMEMBRE, "Index", "Remboursementpret", new { idpret= item.CODEPRET}, null)
+              
+
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FOND.NOMFOND)
@@ -83,18 +86,16 @@
                 @Html.DisplayFor(modelItem => item.MONTANTREMBOURSER)
             </td>
             <td>
-               @string.Format("{0:d}",    Html.DisplayFor(modelItem => item.DATEMISEENPLACE))
-                </td>
+
+                @string.Format("{0:d}", item.DATEMISEENPLACE) 
+            </td>
 <td>
                 @Html.DisplayFor(modelItem => item.SOLDEPRET)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DATEFINPRET  )
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DUREEPRET)
-            </td>
-            <td>
+             <td>
                 @Html.DisplayFor(modelItem => item.STATUTPRET)
             </td>
             <td>
@@ -108,6 +109,7 @@
                 @Html.ActionLink("Details", "Details", new { id = item.CODEPRET }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.CODEPRET })
             </td>
+            <td>@Html.DisplayFor(modelItem=> item.EMAIL)</td>
         </tr>
     }
 

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<JedjanguiWeb.Models.Remboursementpret>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PRET.EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SEANCE.STATUTSEANCE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATEREMBOURSEMENT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CAPITALREMBOURSEMENT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INTERETREMBOURSEMENT)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRET.EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SEANCE.STATUTSEANCE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATEREMBOURSEMENT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CAPITALREMBOURSEMENT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INTERETREMBOURSEMENT)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CODEREMBOURSEMENT }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CODEREMBOURSEMENT }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CODEREMBOURSEMENT })
+        </td>
+    </tr>
+}
+
+</table>

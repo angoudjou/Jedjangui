@@ -1,0 +1,66 @@
+﻿@model JedjanguiWeb.Models.Remboursementpret
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Remboursementpret</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PRET.EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRET.EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEANCE.STATUTSEANCE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEANCE.STATUTSEANCE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATEREMBOURSEMENT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATEREMBOURSEMENT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CAPITALREMBOURSEMENT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CAPITALREMBOURSEMENT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INTERETREMBOURSEEMT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INTERETREMBOURSEEMT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CODEREMBOURSEMENT }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

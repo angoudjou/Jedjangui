@@ -207,6 +207,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MembreController.cs" />
     <Compile Include="Controllers\PretController.cs" />
+    <Compile Include="Controllers\RemboursementpretController.cs" />
     <Compile Include="Controllers\SeanceController.cs" />
     <Compile Include="DAL\JeDjanguiContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -236,6 +237,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Membre.cs" />
     <Compile Include="Models\Pret.cs" />
+    <Compile Include="Models\Remboursementpret.cs" />
     <Compile Include="Models\Seance.cs" />
     <Compile Include="Models\SoldeFond.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -332,10 +334,17 @@
     <Content Include="Views\Fond\balance - Copy.cshtml" />
     <Content Include="Views\Pret\Index.cshtml" />
     <Content Include="Views\Pret\Create.cshtml" />
+    <Content Include="Views\Pret\Edit.cshtml" />
+    <Content Include="Views\Remboursementpret\Create.cshtml" />
+    <Content Include="Views\Remboursementpret\Delete.cshtml" />
+    <Content Include="Views\Remboursementpret\Details.cshtml" />
+    <Content Include="Views\Remboursementpret\Edit.cshtml" />
+    <Content Include="Views\Remboursementpret\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Loan\" />
+    <Folder Include="Views\Remboursement\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

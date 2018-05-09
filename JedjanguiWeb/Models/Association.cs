@@ -22,7 +22,11 @@ namespace JedjanguiWeb.Models
         public string EMAIL { get; set; }
         [Required]
         public string SIGLEASSO { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime? DATECREATIONASS { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime? DATEAJOUTER { get; set; } = DateTime.Now;
         public Boolean STATUTASSO { get; set; } =true;
         public string COMPTABANKASSO { get; set; }

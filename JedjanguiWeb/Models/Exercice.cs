@@ -11,10 +11,16 @@ namespace JedjanguiWeb.Models
         [Key]
         public long CODEEXO { get; set; }
         public long? CODEASSO { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime? DEBUTEXO { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime? FINEXO { get; set; }
         public Boolean STATUTEXO { get; set; } = true;
         public string NOMEXO { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime? FINSAISIE { get; set; }
 
         public virtual Association ASSOCIATION { get; set; }

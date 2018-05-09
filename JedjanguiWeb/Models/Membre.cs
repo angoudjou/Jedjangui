@@ -15,8 +15,14 @@ namespace JedjanguiWeb.Models
         //public long? MEM_CODEMEMBRE { get; set; }
         public long CODEASSO { get; set; }
         public string NOMMEMBRE { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime? DATEADEHSIONMEMEBRE { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime? DATEDEMISSION { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime? DATENAISSANCEMEMBRE { get; set; }
         public Boolean? STATUTMEMBRE { get; set; } = true;
         public string FONCTIONMEMBRE { get; set; }

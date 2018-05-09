@@ -13,8 +13,14 @@ namespace JedjanguiWeb.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long CODESEANCE { get; set; }
         public long CODEEXO { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime? DATESEANCE { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:t}")]
         public DateTime? DEBUTSEANCE { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:t}")]
         public DateTime? FINSEANCE { get; set; }
         public string STATUTSEANCE { get; set; } = "o";
         public string NOMSEANCE { get; set; }
@@ -22,10 +28,11 @@ namespace JedjanguiWeb.Models
         public string COMPTERENDUSEANCE { get; set; }
 
         public virtual Exercice Exercices { get; set; }
+        public ICollection<Remboursementpret> remboursementprets { get; set; }
 
         public Seance()
         {
-                
+            remboursementprets = new List<Remboursementpret>();  
         }
     }
 }
