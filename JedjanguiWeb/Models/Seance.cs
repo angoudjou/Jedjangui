@@ -29,10 +29,13 @@ namespace JedjanguiWeb.Models
 
         public virtual Exercice Exercices { get; set; }
         public ICollection<Remboursementpret> remboursementprets { get; set; }
+        public ICollection<FondSeance> fondseances { get; set; }
 
         public Seance()
         {
-            remboursementprets = new List<Remboursementpret>();  
+            remboursementprets = new List<Remboursementpret>();
+            //generation de la liste des fondseance
+            fondseances = new List<FondSeance>();
         }
     }
 }

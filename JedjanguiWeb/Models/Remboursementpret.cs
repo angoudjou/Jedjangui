@@ -26,7 +26,7 @@ namespace JedjanguiWeb.Models
         public virtual Pret PRET { get; set; }
 
         public virtual Seance SEANCE { get; set; }
-
+        public virtual ICollection<MouvementFond> MOUVEMENTFOND { get; set; }
         public Remboursementpret()
         {
                 

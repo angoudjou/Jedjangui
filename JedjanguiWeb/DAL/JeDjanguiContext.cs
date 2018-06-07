@@ -9,7 +9,7 @@ using System.Web;
 
 namespace JedjanguiWeb.DAL
 {
-    public class JeDjanguiContext: DbContext
+    public class JeDjanguiContext : DbContext
     {
 
         public JeDjanguiContext() : base()
@@ -20,7 +20,7 @@ namespace JedjanguiWeb.DAL
             //Database.SetInitializer(new MigrateDatabaseToLatestVersion<JeDjanguiContext, Migrations.Configuration>());
             ///  Database.SetInitializer(new  MigrateDatabaseToLatestVersion<SchoolDBContext, EF6Console.Migrations.Configuration>());
 
-          
+
         }
 
         public DbSet<Association> Associations { get; set; }
@@ -30,9 +30,11 @@ namespace JedjanguiWeb.DAL
         public DbSet<Fond> Fonds { get; set; }
         public DbSet<FondMembre> FondMembres { get; set; }
         public DbSet<Exercice> Exercices { get; set; }
-        public DbSet <InscrisExercice> Inscrisexercices { get; set; }
+        public DbSet<InscrisExercice> Inscrisexercices { get; set; }
 
         public DbSet<Seance> Seances { get; set; }
+        public DbSet<FondSeance> FondSeances {get; set;}
+        public DbSet<MouvementFond> MouvementFonds { get; set; }
         public DbSet<Pret> Prets { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

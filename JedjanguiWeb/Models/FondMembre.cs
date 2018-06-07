@@ -12,18 +12,18 @@ namespace JedjanguiWeb.Models
       
        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        public long CODEFONDMEMEBRE { get; set; }
+        public long CODEFONDMEMBRE { get; set; }
         public long CODEINSCRIPTIONEXERCICE { get; set; }
         public long CODEFOND  { get; set; }
 
-        public double  DEBIT { get; set; }  
-        public double  CREDIT { get; set; } 
-        public double  SOLDE { get; set; } 
+        public double?  DEBITFONDMEMBRE { get; set; }  
+        public double?  CREDITFONDMEMBRE { get; set; }
+        public double SOLDEFONDMEMBRE { get; set; } = 0;
 
  
         public virtual InscrisExercice  INSCRISEXERCICE{ get; set; }
         public virtual Fond FOND { get; set; }
-
+        public virtual ICollection<MouvementFond> MOUVEMENTFOND { get; set; }
         public FondMembre()
         {
                 

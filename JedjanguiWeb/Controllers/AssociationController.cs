@@ -15,12 +15,13 @@ namespace JedjanguiWeb.Controllers
     public class AssociationController : Controller
     {
         private JeDjanguiContext db = new JeDjanguiContext();
-        int PageSize ;
+        int PageSize= 3 ;
 
         // GET: Association
         public ActionResult Index(int Page=1, string  SearchString="")
         {
             ViewBag.SearchString = SearchString;
+            if(Session["PageSize"]!= null)
             PageSize =int.Parse( Session["PageSize"].ToString());
             List<Association> asso = db.Associations.ToList();
 

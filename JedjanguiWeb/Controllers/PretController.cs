@@ -78,6 +78,7 @@ namespace JedjanguiWeb.Controllers
                     pret.EMAIL = Session["Email"].ToString();
                     pret.MONTANTAREMBOURSER = pret.MONTANTPRET + pret.INTERETPRET;
                 db.Prets.Add(pret);
+                 
                 db.SaveChanges();
                 }
                 else
@@ -103,6 +104,29 @@ namespace JedjanguiWeb.Controllers
             ViewBag.CODEFOND = new SelectList(fonds, "CODEFOND", "NOMFOND", p.CODEMEMBRE);
 
 
+            return View(p);
+
+        }
+        public ActionResult Valider(int? id)
+        {
+            int? codeseance = null;
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            if (Session["CODESEANCE"] != null)
+              codeseance = int.Parse(Session["CODESEANCE"].ToString());
+
+            Pret p = db.Prets.Find(id);
+            p.VALIDERPRET = true;
+         //   p.STATUTPRET = "1";
+            MouvementFond mvt = new MouvementFond();
+            mvt.CODEPRET = p.CODEPRET;
+            mvt.DEBITMVT = p.MONTANTPRET;
+            //On doit chercher le codefondseance correspondant au fond 
+            FondSeance fs = db.FondSeances.Where(f => f.CODEFOND == p.CODEFOND && f.CODESEANCE == codeseance).FirstOrDefault();
+            mvt.CODEFONDSEANCE = fs.CODEFONDSEANCE;
+ 
+            db.MouvementFonds.Add(mvt);
+
+            db.SaveChanges();
             return View(p);
 
         }

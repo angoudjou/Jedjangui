@@ -109,10 +109,31 @@ if(codeseance != null)
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "CODEREMBOURSEMENT,CODEPRET,CODESEANCE,DATEREMBOURSEMENT,CAPITALREMBOURSEMENT,INTERETREMBOURSEMENT")] Remboursementpret remboursementpret)
         {
+
             if (ModelState.IsValid)
             {
                 remboursementpret.EMAIL = Session["Email"].ToString();
                 db.Remboursementprets.Add(remboursementpret);
+                //adding as a mouvement of the seance
+                MouvementFond mvt = new MouvementFond();
+                mvt.CODEREMBOURSEMENT = remboursementpret.CODEREMBOURSEMENT;
+                mvt.CREDITMVT = remboursementpret.CAPITALREMBOURSEMENT + remboursementpret.INTERETREMBOURSEMENT;
+                mvt.INTERETMVT = remboursementpret.INTERETREMBOURSEMENT;
+                mvt.MONTANTCOTISATIONMVT = remboursementpret.CAPITALREMBOURSEMENT;
+                //  mvt.CODEFONDSEANCE = remboursementpret.CODESEANCE;
+                //On doit chercher le codefondseance correspondant au fond 
+
+                int? codeseance = null;
+                if (Session["CODESEANCE"] != null)
+                    codeseance = int.Parse(Session["CODESEANCE"].ToString());
+                Pret pret = db.Prets.Find(remboursementpret.CODEPRET);
+
+               // Int64 codefond = remboursementpret.PRET.CODEFOND;
+                FondSeance fs = db.FondSeances.Where(f => f.CODEFOND == pret.CODEFOND && f.CODESEANCE == codeseance).FirstOrDefault();
+                mvt.CODEFONDSEANCE = fs.CODEFONDSEANCE;
+                //  mvt.CODEFONDMEMEBRE = remboursementpret.PRET.co
+                db.MouvementFonds.Add(mvt);
+
                 db.SaveChanges();
                 return RedirectToAction("Index", new { idpret = remboursementpret.CODEPRET, codeseance = remboursementpret.CODESEANCE});
             }

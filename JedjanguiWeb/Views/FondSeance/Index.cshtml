@@ -1,0 +1,75 @@
+﻿@model IEnumerable<JedjanguiWeb.Models.FondSeance>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FOND.NOMFOND)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SEANCEREUNION.STATUTSEANCE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MONTANTCOTISATION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INTERETSEANCE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MONTANTCOTISATIONAVANT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INTERETSEANCEAVANT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CREDITFONDSEANCE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEBITFONDSEANCE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FOND.NOMFOND)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SEANCEREUNION.STATUTSEANCE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MONTANTCOTISATION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INTERETSEANCE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MONTANTCOTISATIONAVANT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INTERETSEANCEAVANT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CREDITFONDSEANCE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEBITFONDSEANCE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CODEFONDSEANCE }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CODEFONDSEANCE }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CODEFONDSEANCE })
+        </td>
+    </tr>
+}
+
+</table>

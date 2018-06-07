@@ -62,6 +62,22 @@ namespace JedjanguiWeb.Controllers
                 seance.CODEEXO = int.Parse(Session["CODEEXO"].ToString());
             
                     db.Seances.Add(seance);
+                // list of its fonds
+                FondSeance fs = new FondSeance();
+                List<FondSeance> lfs = new List<FondSeance>();
+                int codeasso =int.Parse( Session["CODEASSO"].ToString());
+                List<Fond> lf = db.Fonds.Where(d => d.CODEASSO == codeasso).AsNoTracking().ToList();
+                lf.ForEach(
+                    g =>
+                    {
+                        fs = new FondSeance();
+                        fs.CODEFOND = g.CODEFOND;
+                        fs.CODESEANCE = seance.CODESEANCE;
+                         
+                        lfs.Add(fs);
+                    }
+                    );
+                db.FondSeances.AddRange(lfs);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

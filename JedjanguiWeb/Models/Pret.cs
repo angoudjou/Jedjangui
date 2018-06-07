@@ -34,6 +34,7 @@ namespace JedjanguiWeb.Models
         public DateTime DATEFINPRET { get; set; }
         public long DUREEPRET { get; set; }
         public string STATUTPRET { get; set; }
+        public Boolean VALIDERPRET { get; set; } = false;
         public decimal INTERETPRET { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:d}")]

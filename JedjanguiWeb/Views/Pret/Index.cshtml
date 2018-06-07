@@ -47,7 +47,7 @@
             @Html.DisplayNameFor(model => model.FirstOrDefault().DATEFINPRET)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().STATUTPRET)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().VALIDERPRET)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.FirstOrDefault().INTERETPRET)
@@ -96,7 +96,7 @@
                 @Html.DisplayFor(modelItem => item.DATEFINPRET  )
             </td>
              <td>
-                @Html.DisplayFor(modelItem => item.STATUTPRET)
+                @Html.DisplayFor(modelItem => item.VALIDERPRET)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.INTERETPRET)
@@ -105,9 +105,24 @@
                 @Html.DisplayFor(modelItem => item.DATEDEBUTPRET )
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.CODEPRET }) |
-                @Html.ActionLink("Details", "Details", new { id = item.CODEPRET }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.CODEPRET })
+
+                @if (item.VALIDERPRET != true)
+          {
+        var separator = " ! ";
+            @Html.ActionLink("Edit", "Edit", new { id = item.CODEPRET }) ;
+            @separator;
+            @Html.ActionLink("Valider", "Valider", new { id = item.CODEPRET });
+            @separator;
+            }
+
+                @Html.ActionLink("Details", "Details", new { id = item.CODEPRET })
+                @if (item.VALIDERPRET != true)
+                {
+                    var separator = " ! ";
+                  @Html.ActionLink("Delete", "Delete", new { id = item.CODEPRET });
+                    @separator;
+                    }
+
             </td>
             <td>@Html.DisplayFor(modelItem=> item.EMAIL)</td>
         </tr>

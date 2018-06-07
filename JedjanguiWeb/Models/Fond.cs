@@ -15,7 +15,7 @@ namespace JedjanguiWeb.Models
         public string COMPTEBANQUEFOND { get; set; }
         public string BANQUE { get; set; }
         public string OBJECTIFFOND { get; set; }
-        public bool? OBLIGATOIRE { get; set; }
+        public bool? OBLIGATOIRE { get; set; } = false;
         public string TYPEFOND { get; set; }
 
         public Association ASSOCIATION { get; set; }

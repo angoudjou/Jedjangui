@@ -155,8 +155,8 @@ namespace JedjanguiWeb.Controllers
                            {
                                elt.FOND.NOMFOND,
                                    elt.CODEFOND,
-                                   DEBIT = db.FondMembres.Where(h => h.CODEFOND == elt.CODEFOND).Sum(s => s.DEBIT),
-                                   CREDIT = db.FondMembres.Where(h => h.CODEFOND == elt.CODEFOND).Sum(s => s.CREDIT),
+                                   DEBIT = db.FondMembres.Where(h => h.CODEFOND == elt.CODEFOND).Sum(s => s.DEBITFONDMEMBRE),
+                                   CREDIT = db.FondMembres.Where(h => h.CODEFOND == elt.CODEFOND).Sum(s => s.CREDITFONDMEMBRE),
                                   
                                }).ToList();
 
@@ -168,9 +168,9 @@ namespace JedjanguiWeb.Controllers
                     f.CODEFOND = s.CODEFOND;
                     f.NOMFOND = s.NOMFOND;
                     f.CODEEXERCICE = codeexo;
-                    f.DEBIT = s.DEBIT;
-                    f.CREDIT = s.CREDIT;
-                    f.SOLDE = s.DEBIT - s.CREDIT;
+                    f.DEBITSOLDEFOND = s.DEBIT;
+                    f.CREDITSODLEFOND = s.CREDIT;
+                    f.SOLDESOLDEFOND = s.DEBIT - s.CREDIT;
 
                     Situation.Add(f);
                 });

@@ -1,0 +1,82 @@
+﻿@model JedjanguiWeb.Models.FondSeance
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FondSeance</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FOND.NOMFOND)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FOND.NOMFOND)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEANCEREUNION.STATUTSEANCE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEANCEREUNION.STATUTSEANCE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MONTANTCOTISATION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONTANTCOTISATION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INTERETSEANCE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INTERETSEANCE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MONTANTCOTISATIONAVANT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONTANTCOTISATIONAVANT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INTERETSEANCEAVANT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INTERETSEANCEAVANT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CREDITFONDSEANCE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CREDITFONDSEANCE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEBITFONDSEANCE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEBITFONDSEANCE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CODEFONDSEANCE }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

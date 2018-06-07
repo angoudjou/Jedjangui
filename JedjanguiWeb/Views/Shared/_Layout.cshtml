@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using JedjanguiWeb.Resources
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -18,6 +20,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("JedjanguiOnline", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+              
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -57,7 +60,7 @@
         <div>
             <ul class="nav nav-justified">
                 <li><@Html.ActionLink("Membres Inscris", "Inscris", "Exercice")</li>
-                <li><@Html.ActionLink("Soldes des fond", "balance", "FOND")</li>
+                <li><@Html.ActionLink("Soldes des fond", "Index", "FondSeance")</li>
                 <li><@Html.ActionLink("Seances", "Index", "Seance", new { codeexo = Session["CODEEXO"].ToString() })</li>
             </ul>
 
@@ -69,9 +72,9 @@
             <ul class="nav nav-justified">
                 <li>@Html.ActionLink("Presence", "Presence", "Seance")</li>
                 <li>@Html.ActionLink("Soldes des fonds", "Balance", "Seance")</li>
-                <li>@Html.ActionLink("Tontine", "Mouvementfond", "Seance")</li>
-                <li>@Html.ActionLink("Djangui", "Mouvementfond", "Seance")</li>
-                <li>@Html.ActionLink("Mouvement Financiers", "Mouvementfond", "Seance")</li>
+                <li>@Html.ActionLink("Tontine", "Index", "FondSeance")</li>
+                <li>@Html.ActionLink("Djangui", "Index", "FondSeance")</li>
+                <li>@Html.ActionLink("Mouvement Financiers", "Index", "FondSeance")</li>
 
                 <li>@Html.ActionLink("Remboursement", "Index", "Remboursementpret", new { codeseance = Session["CODESEANCE"].ToString() }, null)</li>
 
