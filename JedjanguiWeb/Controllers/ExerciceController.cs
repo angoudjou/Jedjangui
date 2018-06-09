@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using JedjanguiWeb.DAL;
+using JedjanguiWeb.DesignPattern;
 using JedjanguiWeb.Models;
 
 namespace JedjanguiWeb.Controllers
@@ -14,11 +15,13 @@ namespace JedjanguiWeb.Controllers
     public class ExerciceController : Controller
     {
         private JeDjanguiContext db = new JeDjanguiContext();
+        private Factory factory = new Factory();
 
         // GET: Exercice
         public ActionResult Index()
         {
-            var exercices = db.Exercices.Include(e => e.ASSOCIATION);
+            // int codeasso = int.Parse(Session["CODE"]);
+            var exercices = db.Exercices.Where(f=>f.CODEASSO == Singleton.CodeAsso);// .Include(e => e.ASSOCIATION);
             return View(exercices.ToList());
         }
 
@@ -157,23 +160,29 @@ namespace JedjanguiWeb.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Exercice exercice = db.Exercices.Find(id);
-            if (exercice == null)
-            {
-                return HttpNotFound();
-            }
-            else
-            {
-                Session["CODEEXO"] = exercice.CODEEXO;
-                Int64 codexo = exercice.CODEEXO;
-                Seance sc = db.Seances.Where(f => f.CODEEXO == codexo).OrderByDescending(t => t.CODESEANCE).FirstOrDefault();
-                //if (sc == null )
-                //    sc = db.Seances.Where(g => g.CODEEXO == exo.CODEEXO).OrderByDescending(t => t.CODESEANCE).FirstOrDefault();
-                if (sc != null)
-                    Session["CODESEANCE"] = sc.CODESEANCE;
 
+            //Exercice exercice = db.Exercices.Find(id);
+            //if (exercice == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            //else
+            //{
+            //    Session["CODEEXO"] = exercice.CODEEXO;
+            //    Int64 codexo = exercice.CODEEXO;
+            //    Seance sc = db.Seances.Where(f => f.CODEEXO == codexo).OrderByDescending(t => t.CODESEANCE).FirstOrDefault();
+            //    //if (sc == null )
+            //    //    sc = db.Seances.Where(g => g.CODEEXO == exo.CODEEXO).OrderByDescending(t => t.CODESEANCE).FirstOrDefault();
+            //    if (sc != null)
+            //        Session["CODESEANCE"] = sc.CODESEANCE;
+            if (factory.OuvrirExercice(id))
+            {
                 return RedirectToAction("Index", "Seance");
             }
+            else
+                return HttpNotFound();
+
+       
           
         }
         //post action

@@ -53,7 +53,8 @@
             @Html.DisplayFor(modelItem => item.FINSAISIE)
         </td>
         <td>
-            @Html.ActionLink("Ouvrir", "Ouvrir", new { id = item.CODEEXO }) |
+           
+            @Html.ActionLink("Ouvri", "Ouvrir", new { id = item.CODEEXO  }, new { @class = "glyphicon glyphicon-open"}) |
             @Html.ActionLink("Edit", "Edit", new { id = item.CODEEXO }) |
             @Html.ActionLink("Details", "Details", new { id = item.CODEEXO }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.CODEEXO }) 

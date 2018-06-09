@@ -211,6 +211,8 @@
     <Compile Include="Controllers\RemboursementpretController.cs" />
     <Compile Include="Controllers\SeanceController.cs" />
     <Compile Include="DAL\JeDjanguiContext.cs" />
+    <Compile Include="DesignPattern\Factory.cs" />
+    <Compile Include="DesignPattern\Singleton.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -231,6 +233,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Association.cs" />
+    <Compile Include="Models\CheckBoxListItem.cs" />
     <Compile Include="Models\FondSeance.cs" />
     <Compile Include="Models\InscrisExercice.cs" />
     <Compile Include="Models\Exercice.cs" />

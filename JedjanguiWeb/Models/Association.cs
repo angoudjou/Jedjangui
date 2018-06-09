@@ -22,12 +22,15 @@ namespace JedjanguiWeb.Models
         [Display(Name = "Nom", ResourceType = typeof(JedjanguiWeb.Resources.Model.Traduction))]
 
         [Required]
+
         public string NOMASSO { get; set; }
         [Required]
+        [Display(Name = "But", ResourceType = typeof(JedjanguiWeb.Resources.Model.Traduction))]
         public string BUTASSO { get; set; }
 
         public string EMAIL { get; set; }
         [Required]
+        [Display(Name = "Sigle", ResourceType = typeof(JedjanguiWeb.Resources.Model.Traduction))]
         public string SIGLEASSO { get; set; }
 
         [Display(Name = "Date", ResourceType =typeof(JedjanguiWeb.Resources.Model.Traduction ))]
@@ -37,12 +40,19 @@ namespace JedjanguiWeb.Models
         [DisplayFormat(DataFormatString = "{0:d}")]
         [Display(Name = "DateAjouter", ResourceType = typeof(JedjanguiWeb.Resources.Model.Traduction))]
         public DateTime? DATEAJOUTER { get; set; } = DateTime.Now;
+        [Display(Name = "Statut", ResourceType = typeof(JedjanguiWeb.Resources.Model.Traduction))]
         public Boolean STATUTASSO { get; set; } =true;
+        [Display(Name = "CompteBanque", ResourceType = typeof(JedjanguiWeb.Resources.Model.Traduction))]
         public string COMPTABANKASSO { get; set; }
+
+        [Display(Name = "Banque", ResourceType = typeof(JedjanguiWeb.Resources.Model.Traduction))]
         public string BANQUEASSO { get; set; }
 
         [Display(Name = "Slogan", ResourceType = typeof(JedjanguiWeb.Resources.Model.Traduction))]
         public string SLOGANASSO { get; set; }
+
+        [Display(Name = "Addresse", ResourceType = typeof(JedjanguiWeb.Resources.Model.Traduction))]
+
         public string ADDRESSEASSO { get; set; }
         public string MOTPASSEASSO { get; set; }
         public string LIEURENCONTRE { get; set; }
@@ -56,7 +66,7 @@ namespace JedjanguiWeb.Models
         {
          
                     
-                Membre = new List<Membre>();
+           Membre = new List<Membre>();
             Fond = new List<Fond>();
             Exercice = new List<Exercice>();
 

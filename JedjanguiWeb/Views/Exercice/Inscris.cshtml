@@ -12,16 +12,22 @@
 <table class="table">
     <tr>
         <th>
-          Nom
+            ID
         </th>
         <th>
-          Responsabilité
+            Nom
         </th>
-        
+        <th>
+            Responsabilité
+        </th>
+
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODEMEMBRE)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.MEMBRE.NOMMEMBRE)
         </td>

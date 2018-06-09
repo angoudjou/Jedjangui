@@ -73,7 +73,10 @@ namespace JedjanguiWeb.Controllers
                         fs = new FondSeance();
                         fs.CODEFOND = g.CODEFOND;
                         fs.CODESEANCE = seance.CODESEANCE;
-                         
+                         // find the last fondseance
+                        
+                        //fill the mvt for the tontine and djangui
+
                         lfs.Add(fs);
                     }
                     );

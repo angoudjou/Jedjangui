@@ -40,6 +40,7 @@ namespace JedjanguiWeb.Models
         public string MATRICULE { get; set; }
 
         public virtual ICollection<InscrisExercice> InscrisExercices { get; set; }
+       // public virtual ICollection< InscrisExercice> FondMembres { get; set; }
          
 
         public Association  association {get; set;}
@@ -47,7 +48,7 @@ namespace JedjanguiWeb.Models
         public Membre()
         {
             InscrisExercices = new List< InscrisExercice>();
-           // FondMembres = new List<FondMembre>();
+            //FondMembres = new List<FondMembre>();
         }
     }
 }

@@ -61,6 +61,42 @@ namespace JedjanguiWeb.Resources.Model {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Addresse.
+        /// </summary>
+        public static string Addresse {
+            get {
+                return ResourceManager.GetString("Addresse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Banque.
+        /// </summary>
+        public static string Banque {
+            get {
+                return ResourceManager.GetString("Banque", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to But.
+        /// </summary>
+        public static string But {
+            get {
+                return ResourceManager.GetString("But", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compte Bancaire.
+        /// </summary>
+        public static string CompteBanque {
+            get {
+                return ResourceManager.GetString("CompteBanque", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date de Creation.
         /// </summary>
         public static string Date {
@@ -97,11 +133,29 @@ namespace JedjanguiWeb.Resources.Model {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sigle.
+        /// </summary>
+        public static string Sigle {
+            get {
+                return ResourceManager.GetString("Sigle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Slogan.
         /// </summary>
         public static string Slogan {
             get {
                 return ResourceManager.GetString("Slogan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statut.
+        /// </summary>
+        public static string Statut {
+            get {
+                return ResourceManager.GetString("Statut", resourceCulture);
             }
         }
     }

@@ -17,6 +17,7 @@ namespace JedjanguiWeb.Controllers
         private JeDjanguiContext db = new JeDjanguiContext();
         int pageSize;
         int codeasso;
+        int codeexo;
         // GET: Membre
         public ActionResult Index( int page=1, string SearchString="")
          {
@@ -59,7 +60,33 @@ namespace JedjanguiWeb.Controllers
         // GET: Membre/Create
         public ActionResult Create()
         {
+            if (Session["CODEASSO"] != null)
+                codeasso = int.Parse(Session["CODEASSO"].ToString());
+
             ViewBag.CODEASSO = new SelectList(db.Associations, "CODEASSO", "NOMASSO");
+           
+            //list des fonds
+            var fonds = db.Fonds.Where(d => d.CODEASSO == codeasso);
+            var fondmembres = new List<Fond>();
+            FondMembre fm = null;
+          //  fm.CODEINSCRIPTIONEXERCICE
+            foreach (var item in fonds)
+            {
+                fondmembres.Add(
+                    new Fond  {
+                        CODEFOND =item.CODEFOND,
+                        NOMFOND = item.NOMFOND,
+                      
+                      //  EstMembre = false,
+              
+                  //Checked = false
+
+                });
+                    
+             };//end foreach
+               // Membre model = new Membre();
+               // model.fond = fondmembres;
+            ViewBag.fondmembres = fondmembres;
             return View();
         }
 
@@ -68,14 +95,55 @@ namespace JedjanguiWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "NOMMEMBRE,DATEADEHSIONMEMEBRE,DATEDEMISSION,DATENAISSANCEMEMBRE,STATUTMEMBRE,FONCTIONMEMBRE,TELMEMBRE,RESIDENCEMEMEBRE,ADRESSEMEMEBRE,SEXEMEMBRE,STATUTMATRIMONIALE,EMAILMEMBRE,NOMBREENFANT,NOTEMEMBRE,TITREMEMBRE,TYPEMEMBRE,ELOGE,MATRICULE")] Membre membre)
+        public ActionResult Create([Bind(Include = "NOMMEMBRE,DATEADEHSIONMEMEBRE,DATEDEMISSION,DATENAISSANCEMEMBRE,STATUTMEMBRE,FONCTIONMEMBRE,TELMEMBRE,RESIDENCEMEMEBRE,ADRESSEMEMEBRE,SEXEMEMBRE,STATUTMATRIMONIALE,EMAILMEMBRE,NOMBREENFANT,NOTEMEMBRE,TITREMEMBRE,TYPEMEMBRE,ELOGE,MATRICULE")] Membre membre, string[] fondmembre)
         {
             if (ModelState.IsValid)
             {
                 membre.CODEASSO = int.Parse(Session["CODEASSO"].ToString());
 
+                if (Session["CODEEXO"] != null)
+                    codeexo = int.Parse(Session["CODEEXO"].ToString());
+
+                // register to current exercices
+                InscrisExercice inscris = new InscrisExercice();
+                inscris.CODEEXO = codeexo;
+              //  inscris.CODEMEMBRE = membre.CODEMEMBRE;
+             
+                //adding to new fond inn fonds members
+                List<FondMembre> fondmembres = new List<FondMembre>();
+                FondMembre fm;
+               
+                if (fondmembre != null)
+                {
+                    foreach (var item in fondmembre)
+                    {
+                        fm = new FondMembre();
+                        fm.CODEFOND = int.Parse(item);
+                        fm.CODEINSCRIPTIONEXERCICE = inscris.CODEINSCRIPTIONEXERCICE;
+                      //  fm.CODEFONDMEMBRE = 0;
+                      //  inscris.FondMembres.Add(fm);
+                      fondmembres.Add(fm);
+                    }
+                    
+
+                     inscris.FondMembres.AddRange(fondmembres);
+                }
+
+                membre.InscrisExercices.Add(inscris);
+
                 db.Membres.Add(membre);
                 db.SaveChanges();
+
+                // db.Membres.Add(membre);
+
+
+
+
+                //  db.Membres.Add(membre);
+                //db.FondMembres.AddRange(fondmembres);
+                //db.SaveChanges();
+
+
                 return RedirectToAction("Index");
             }
 

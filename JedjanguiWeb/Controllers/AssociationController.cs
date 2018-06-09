@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using JedjanguiWeb.DAL;
+using JedjanguiWeb.DesignPattern;
 using JedjanguiWeb.Models;
 using PagedList;
 
@@ -15,6 +16,7 @@ namespace JedjanguiWeb.Controllers
     public class AssociationController : Controller
     {
         private JeDjanguiContext db = new JeDjanguiContext();
+        
         int PageSize= 3 ;
 
         // GET: Association
@@ -66,30 +68,42 @@ namespace JedjanguiWeb.Controllers
         // GET: Mrque une association comme encours
         public ActionResult Ouvrir(long? id)
         {
+              Factory factory = new Factory();
             if(id != null)
             {
                 Association asso = db.Associations.Find(id);
-           Session["CODEASSO"] = id;
-                Session["NOMASSO"] = id + " - "+ asso.SIGLEASSO + "- " +asso.NOMASSO;
-
-                //exercices, we take the last if the 
-                Exercice exo = db.Exercices.Where(g => g.CODEASSO == id && g.STATUTEXO == true).OrderByDescending(h => h.CODEEXO).FirstOrDefault();
-                if(exo == null)
-                    exo = db.Exercices.Where(g => g.CODEASSO == id).OrderByDescending(t=>t.CODEEXO).FirstOrDefault();
-                
-                //seance, we take the last seance
-                if (exo != null)
-                {
-                    Int64 codexo = exo.CODEEXO;
-                    Session["CODEEXO"] = codexo;// exo.CODEEXO;
-                    Seance sc = db.Seances.Where(f=>f.CODEEXO == codexo ).OrderByDescending(t => t.CODESEANCE).FirstOrDefault();
-                    //if (sc == null )
-                    //    sc = db.Seances.Where(g => g.CODEEXO == exo.CODEEXO).OrderByDescending(t => t.CODESEANCE).FirstOrDefault();
-                    if(sc != null)
-                        Session["CODESEANCE"] = sc.CODESEANCE;
+                if (asso != null)
+                { 
+                     factory.OuvrirAssociation(id.Value);
+                    return RedirectToAction("Index", "Membre");
                 }
+                //wrong number
+                else
+                    return HttpNotFound();
 
-                return RedirectToAction("Index", "Membre");
+
+
+                //Session["CODEASSO"] = id;
+                //     Session["NOMASSO"] = id + " - "+ asso.SIGLEASSO + "- " +asso.NOMASSO;
+
+                //     //exercices, we take the last if the 
+                //     Exercice exo = db.Exercices.Where(g => g.CODEASSO == id && g.STATUTEXO == true).OrderByDescending(h => h.CODEEXO).FirstOrDefault();
+                //     if(exo == null)
+                //         exo = db.Exercices.Where(g => g.CODEASSO == id).OrderByDescending(t=>t.CODEEXO).FirstOrDefault();
+
+                //     //seance, we take the last seance
+                //     if (exo != null)
+                //     {
+                //         Int64 codexo = exo.CODEEXO;
+                //         Session["CODEEXO"] = codexo;// exo.CODEEXO;
+                //         Seance sc = db.Seances.Where(f=>f.CODEEXO == codexo ).OrderByDescending(t => t.CODESEANCE).FirstOrDefault();
+                //         //if (sc == null )
+                //         //    sc = db.Seances.Where(g => g.CODEEXO == exo.CODEEXO).OrderByDescending(t => t.CODESEANCE).FirstOrDefault();
+                //         if(sc != null)
+                //             Session["CODESEANCE"] = sc.CODESEANCE;
+            //}
+
+                
             }
             else
                 return HttpNotFound();

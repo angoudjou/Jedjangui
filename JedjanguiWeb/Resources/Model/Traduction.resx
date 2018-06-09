@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Addresse" xml:space="preserve">
+    <value>Addresse</value>
+  </data>
+  <data name="Banque" xml:space="preserve">
+    <value>Banque</value>
+  </data>
+  <data name="But" xml:space="preserve">
+    <value>But</value>
+  </data>
+  <data name="CompteBanque" xml:space="preserve">
+    <value>Compte Bancaire</value>
+  </data>
   <data name="Date" xml:space="preserve">
     <value>Date de Creation</value>
   </data>
@@ -129,7 +141,13 @@
   <data name="Nom" xml:space="preserve">
     <value>Nom</value>
   </data>
+  <data name="Sigle" xml:space="preserve">
+    <value>Sigle</value>
+  </data>
   <data name="Slogan" xml:space="preserve">
     <value>Slogan</value>
+  </data>
+  <data name="Statut" xml:space="preserve">
+    <value>Statut</value>
   </data>
 </root>

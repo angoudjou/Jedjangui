@@ -20,7 +20,7 @@
 <table class="table  table-striped table-hover table-bordered">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().EMAIL)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().CODEASSO)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.FirstOrDefault().NOMASSO)
@@ -46,7 +46,7 @@
     {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.EMAIL)
+            @Html.DisplayFor(modelItem => item.CODEASSO)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.NOMASSO)
@@ -65,12 +65,11 @@
 
 
         <td>
-            
-            @Html.ActionLink("Ouvrir", "Ouvrir", new { id = item.CODEASSO }) |
+           
+            @Html.ActionLink(" <span class='glyphicon glyphicon-open'></span>", "Ouvrir", new { id = item.CODEASSO }) |
             @Html.ActionLink("Edit", "Edit", new { id = item.CODEASSO }) |
             @Html.ActionLink("Details", "Details", new { id = item.CODEASSO }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.CODEASSO }) |
-            @Html.ActionLink("Ouvrir", "Ouvrir", new { id = item.CODEASSO })
+            @Html.ActionLink("Delete", "Delete", new { id = item.CODEASSO })
         </td>
     </tr>
     }
