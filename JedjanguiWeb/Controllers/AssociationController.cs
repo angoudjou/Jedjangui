@@ -17,14 +17,13 @@ namespace JedjanguiWeb.Controllers
     {
         private JeDjanguiContext db = new JeDjanguiContext();
         
-        int PageSize= 3 ;
+        
 
         // GET: Association
         public ActionResult Index(int Page=1, string  SearchString="")
         {
             ViewBag.SearchString = SearchString;
-            if(Session["PageSize"]!= null)
-            PageSize =int.Parse( Session["PageSize"].ToString());
+            
             List<Association> asso = db.Associations.ToList();
 
             //if logged, we select the list of his associations
@@ -38,9 +37,9 @@ namespace JedjanguiWeb.Controllers
             }
           
             if (string.IsNullOrEmpty(SearchString))
-            return View(asso.OrderBy(l=>l.NOMASSO).ToPagedList(Page ,PageSize));
+            return View(asso.OrderBy(l=>l.NOMASSO).ToPagedList(Page , Singleton.pageSize));
             else
-                return View(asso.Where(f=>f.NOMASSO.Contains(SearchString) || f.SIGLEASSO.Contains(SearchString)).OrderBy(l => l.NOMASSO).ToPagedList(Page, PageSize));
+                return View(asso.Where(f=>f.NOMASSO.Contains(SearchString) || f.SIGLEASSO.Contains(SearchString)).OrderBy(l => l.NOMASSO).ToPagedList(Page,Singleton.pageSize));
 
         }
 

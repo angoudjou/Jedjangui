@@ -65,8 +65,9 @@
 
 
         <td>
-           
-            @Html.ActionLink(" <span class='glyphicon glyphicon-open'></span>", "Ouvrir", new { id = item.CODEASSO }) |
+            <a href=" @Url.Action("Ouvrir", "Association", new { id = item.CODEASSO })"><span class="glyphicon glyphicon-folder-open"></span></a> !
+          
+            @Html.ActionLink("Ouvrir", "Ouvrir", new { id = item.CODEASSO }, new {  @class = "glyphicon glyphicon-folder-open" }) |
             @Html.ActionLink("Edit", "Edit", new { id = item.CODEASSO }) |
             @Html.ActionLink("Details", "Details", new { id = item.CODEASSO }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.CODEASSO })

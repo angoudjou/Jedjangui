@@ -29,7 +29,7 @@ namespace JedjanguiWeb.Models
 
         public FondSeance()
         {
-            // this.COTISATIONMEMBRE = new HashSet<COTISATIONMEMBRE>();
+            MOUVEMENTFOND = new List<MouvementFond>();            // this.COTISATIONMEMBRE = new HashSet<COTISATIONMEMBRE>();
         }
     }
 }

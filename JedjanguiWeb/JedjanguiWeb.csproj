@@ -207,6 +207,7 @@
     <Compile Include="Controllers\LoanController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MembreController.cs" />
+    <Compile Include="Controllers\MouvementFondController.cs" />
     <Compile Include="Controllers\PretController.cs" />
     <Compile Include="Controllers\RemboursementpretController.cs" />
     <Compile Include="Controllers\SeanceController.cs" />
@@ -373,6 +374,11 @@
     <Content Include="Views\FondSeance\Details.cshtml" />
     <Content Include="Views\FondSeance\Edit.cshtml" />
     <Content Include="Views\FondSeance\Index.cshtml" />
+    <Content Include="Views\MouvementFond\Create.cshtml" />
+    <Content Include="Views\MouvementFond\Delete.cshtml" />
+    <Content Include="Views\MouvementFond\Details.cshtml" />
+    <Content Include="Views\MouvementFond\Edit.cshtml" />
+    <Content Include="Views\MouvementFond\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

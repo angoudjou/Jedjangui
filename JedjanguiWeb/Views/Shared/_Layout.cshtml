@@ -60,8 +60,8 @@
         <div>
             <ul class="nav nav-justified">
                 <li><@Html.ActionLink("Membres Inscris", "Inscris", "Exercice")</li>
-                <li><@Html.ActionLink("Soldes des fond", "Index", "FondSeance")</li>
-                <li><@Html.ActionLink("Seances", "Index", "Seance", new { codeexo = Session["CODEEXO"].ToString() })</li>
+                <li><@Html.ActionLink("Soldes des fond", "BalanceFond", "Fond")</li>
+                <li><@Html.ActionLink("Seances", "Index",  "Seance",new { codeexo = Session["CODEEXO"].ToString() }, null)</li>
             </ul>
 
         </div>
@@ -71,15 +71,11 @@
         <div>
             <ul class="nav nav-justified">
                 <li>@Html.ActionLink("Presence", "Presence", "Seance")</li>
-                <li>@Html.ActionLink("Soldes des fonds", "Balance", "Seance")</li>
-                <li>@Html.ActionLink("Tontine", "Index", "FondSeance")</li>
-                <li>@Html.ActionLink("Djangui", "Index", "FondSeance")</li>
-                <li>@Html.ActionLink("Mouvement Financiers", "Index", "FondSeance")</li>
+                <li>@Html.ActionLink("Soldes des fonds", "Index", "FondSeance")</li>
+               
+                <li>@Html.ActionLink("Operation Financieres", "Index", "FondSeance")</li>
 
-                <li>@Html.ActionLink("Remboursement", "Index", "Remboursementpret", new { codeseance = Session["CODESEANCE"].ToString() }, null)</li>
-
-                <li>@Html.ActionLink("Seances", "Index", "Seance", new { codeexo = Session["CODEEXO"].ToString() }, null)</li>
-
+                <li>@Html.ActionLink("Remboursement", "Index", "Remboursementpret", new { codeseance = Session["CODESEANCE"].ToString() }, new { @class ="btn btn-primary"})</li>
                 <li>@Html.ActionLink("Prets", "Index", "Pret")</li>
             </ul>
 

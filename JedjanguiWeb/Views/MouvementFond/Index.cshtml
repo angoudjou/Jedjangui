@@ -1,0 +1,93 @@
+﻿@model IEnumerable<JedjanguiWeb.Models.MouvementFond>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FONDEMEMBRE.CODEFONDMEMBRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FONDSEANCE.CODEFONDSEANCE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REMBOURSEMENTPRET.EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CODEPRET)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MONTANTCOTISATIONMVT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INTERETMVT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MONTANTCOTISATIONAVANTMVT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INTERETSEANCEAVANT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CREDITMVT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEBITMVT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOTIFMVT)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FONDEMEMBRE.CODEFONDMEMBRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FONDSEANCE.CODEFONDSEANCE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REMBOURSEMENTPRET.EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODEPRET)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MONTANTCOTISATIONMVT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INTERETMVT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MONTANTCOTISATIONAVANTMVT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INTERETSEANCEAVANT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CREDITMVT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEBITMVT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOTIFMVT)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CODEMVT }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CODEMVT }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CODEMVT })
+        </td>
+    </tr>
+}
+
+</table>

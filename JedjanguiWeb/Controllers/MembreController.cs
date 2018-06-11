@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using JedjanguiWeb.DAL;
+using JedjanguiWeb.DesignPattern;
 using JedjanguiWeb.Models;
 using PagedList;
 
@@ -15,7 +16,7 @@ namespace JedjanguiWeb.Controllers
     public class MembreController : Controller
     {
         private JeDjanguiContext db = new JeDjanguiContext();
-        int pageSize;
+       // int pageSize =3;
         int codeasso;
         int codeexo;
         // GET: Membre
@@ -24,7 +25,9 @@ namespace JedjanguiWeb.Controllers
             if(Session["CODEASSO"] !=null)
              codeasso  = int.Parse(Session["CODEASSO"].ToString());
 
-            pageSize = int.Parse(Session["PageSize"].ToString());
+           //if(Session["PageSize"] != null)
+           // pageSize = int.Parse(Session["PageSize"].ToString());
+
             // = db.Membres.Include(m => m.association);
             List<Membre> membres = db.Membres.OrderBy(h => h.NOMMEMBRE).ToList();
 
@@ -37,7 +40,7 @@ namespace JedjanguiWeb.Controllers
                 membres = membres.Where(f => f.NOMMEMBRE.Contains(SearchString)).ToList();
 
             
-            return View(membres.ToPagedList(page, pageSize));
+            return View(membres.ToPagedList(page,Singleton. pageSize));
            
            
         }
@@ -58,6 +61,7 @@ namespace JedjanguiWeb.Controllers
         }
 
         // GET: Membre/Create
+        [HttpGet]
         public ActionResult Create()
         {
             if (Session["CODEASSO"] != null)
@@ -95,7 +99,7 @@ namespace JedjanguiWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "NOMMEMBRE,DATEADEHSIONMEMEBRE,DATEDEMISSION,DATENAISSANCEMEMBRE,STATUTMEMBRE,FONCTIONMEMBRE,TELMEMBRE,RESIDENCEMEMEBRE,ADRESSEMEMEBRE,SEXEMEMBRE,STATUTMATRIMONIALE,EMAILMEMBRE,NOMBREENFANT,NOTEMEMBRE,TITREMEMBRE,TYPEMEMBRE,ELOGE,MATRICULE")] Membre membre, string[] fondmembre)
+        public ActionResult Create([Bind(Include = "NOMMEMBRE,DATEADEHSIONMEMEBRE,DATEDEMISSION,DATENAISSANCEMEMBRE,STATUTMEMBRE,FONCTIONMEMBRE,TELMEMBRE,RESIDENCEMEMEBRE,ADRESSEMEMEBRE,SEXEMEMBRE,STATUTMATRIMONIALE,EMAILMEMBRE,NOMBREENFANT,NOTEMEMBRE,TITREMEMBRE,TYPEMEMBRE,ELOGE,MATRICULE")] Membre membre, string[] fondmembre, Boolean next= false)
         {
             if (ModelState.IsValid)
             {
@@ -142,15 +146,21 @@ namespace JedjanguiWeb.Controllers
                 //  db.Membres.Add(membre);
                 //db.FondMembres.AddRange(fondmembres);
                 //db.SaveChanges();
-
-
+                if (next)
+                    RedirectToAction("CreateNext");
+                else
                 return RedirectToAction("Index");
             }
 
             ViewBag.CODEASSO = new SelectList(db.Associations, "CODEASSO", "NOMASSO", membre.CODEASSO);
+
             return View(membre);
         }
 
+        public ActionResult CreateNext()
+        {
+            return RedirectToAction("Create");
+        }
         // GET: Membre/Edit/5
         public ActionResult Edit(long? id)
         {
@@ -181,6 +191,9 @@ namespace JedjanguiWeb.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.CODEASSO = new SelectList(db.Associations, "CODEASSO", "NOMASSO", membre.CODEASSO);
+
+            //List des fond ou il est inscris
+          //  string[] fondmembre= db.FondMembres.Where()
             return View(membre);
         }
 

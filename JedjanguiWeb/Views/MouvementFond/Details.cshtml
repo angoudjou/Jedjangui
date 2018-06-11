@@ -1,0 +1,106 @@
+﻿@model JedjanguiWeb.Models.MouvementFond
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MouvementFond</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FONDEMEMBRE.CODEFONDMEMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FONDEMEMBRE.CODEFONDMEMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FONDSEANCE.CODEFONDSEANCE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FONDSEANCE.CODEFONDSEANCE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REMBOURSEMENTPRET.EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REMBOURSEMENTPRET.EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODEPRET)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODEPRET)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MONTANTCOTISATIONMVT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONTANTCOTISATIONMVT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INTERETMVT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INTERETMVT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MONTANTCOTISATIONAVANTMVT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONTANTCOTISATIONAVANTMVT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INTERETSEANCEAVANT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INTERETSEANCEAVANT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CREDITMVT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CREDITMVT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEBITMVT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEBITMVT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOTIFMVT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOTIFMVT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CODEMVT }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

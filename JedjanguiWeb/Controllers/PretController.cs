@@ -9,6 +9,7 @@ using JedjanguiWeb.DAL;
 using JedjanguiWeb.Models;
 using System.Net;
 using System.Data.Entity;
+using JedjanguiWeb.DesignPattern;
 
 namespace JedjanguiWeb.Controllers
 {
@@ -17,7 +18,7 @@ namespace JedjanguiWeb.Controllers
        
 
         private JeDjanguiContext db = new JeDjanguiContext();
-        int pageSize;
+        
         int codeasso=0;
         // GET: Pret
         public ActionResult Index(int page = 1, string SearchString = "")
@@ -25,7 +26,7 @@ namespace JedjanguiWeb.Controllers
             if (Session["CODEASSO"] != null)
                 codeasso = int.Parse(Session["CODEASSO"].ToString());
 
-            pageSize = int.Parse(Session["PageSize"].ToString());
+          
             // = db.Membres.Include(m => m.association);
             List<Pret> prets = new List<Pret>() ;// = db.Prets.Where(f=>f.CODEASSO == codeasso).OrderBy(h => h.NOMMEMBRE).ToList();
 
@@ -38,7 +39,7 @@ namespace JedjanguiWeb.Controllers
                 prets = prets.Where(f => f.MEMBRE.NOMMEMBRE.Contains(SearchString)).ToList();
 
             ViewBag.SearchString = SearchString;
-            return View(prets.ToPagedList(page, pageSize));
+            return View(prets.ToPagedList(page,Singleton.pageSize));
 
 
         }

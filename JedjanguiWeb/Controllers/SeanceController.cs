@@ -73,9 +73,30 @@ namespace JedjanguiWeb.Controllers
                         fs = new FondSeance();
                         fs.CODEFOND = g.CODEFOND;
                         fs.CODESEANCE = seance.CODESEANCE;
-                         // find the last fondseance
-                        
+                        // find the last fondseance
+
                         //fill the mvt for the tontine and djangui
+                        //list of members of the fund and automatically creaate void mvt for the seance
+                        var fondmembre = db.FondMembres.Where(t => t.CODEFOND == g.CODEFOND);
+                        List<MouvementFond> mvts = new List<MouvementFond>();
+                        foreach (var item in fondmembre)
+                        {
+                            mvts.Add(new MouvementFond
+                            {
+                                //we can also find the last values of the fond here
+                                CODEFONDMEMBRE = item.CODEFONDMEMBRE,
+                                MONTANTCOTISATIONMVT = 0,
+                                INTERETMVT = 0,
+                                CODEFONDSEANCE = fs.CODEFONDSEANCE
+
+                            });
+                        }
+
+                        fs.MOUVEMENTFOND = mvts;
+                        //db.FondSeances.Add(fondSeance);
+                       // db.SaveChanges();
+
+
 
                         lfs.Add(fs);
                     }

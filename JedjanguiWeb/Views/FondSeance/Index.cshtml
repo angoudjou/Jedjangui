@@ -12,22 +12,10 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.CODEFONDSEANCE)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.FOND.NOMFOND)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SEANCEREUNION.STATUTSEANCE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MONTANTCOTISATION)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.INTERETSEANCE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MONTANTCOTISATIONAVANT)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.INTERETSEANCEAVANT)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CREDITFONDSEANCE)
@@ -41,33 +29,25 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.CODEFONDSEANCE)
+        </td>
+
+        <td>
             @Html.DisplayFor(modelItem => item.FOND.NOMFOND)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SEANCEREUNION.STATUTSEANCE)
+            @Html.DisplayFor(modelItem => item.DEBITFONDSEANCE)
+
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.MONTANTCOTISATION)
+
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.INTERETSEANCE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MONTANTCOTISATIONAVANT)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.INTERETSEANCEAVANT)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CREDITFONDSEANCE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DEBITFONDSEANCE)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CODEFONDSEANCE }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CODEFONDSEANCE }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CODEFONDSEANCE })
+            @Html.ActionLink("Caluculer Interet", "CaluculerInteret", new { id = item.CODEFONDSEANCE }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.CODEFONDSEANCE }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CODEFONDSEANCE }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.CODEFONDSEANCE })
         </td>
     </tr>
 }
