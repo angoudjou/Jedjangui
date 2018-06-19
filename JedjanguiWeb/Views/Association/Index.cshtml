@@ -4,13 +4,13 @@
 
 
 @{
-    ViewBag.Title = "Liste des associations";
+    ViewBag.Title = @JedjanguiWeb.Resources.Layout.Layout.TitreListeAssociation;
 }
 
-<h2>Liste des associations</h2>
+<h2>@JedjanguiWeb.Resources.Layout.Layout.TitreListeAssociation</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.TitreAjouter, "Create")
 </p>
 <form class="form-group" action="~/Association/Index">
     @Html.Label("Chercher")
@@ -66,11 +66,10 @@
 
         <td>
             <a href=" @Url.Action("Ouvrir", "Association", new { id = item.CODEASSO })"><span class="glyphicon glyphicon-folder-open"></span></a> !
-          
-            @Html.ActionLink("Ouvrir", "Ouvrir", new { id = item.CODEASSO }, new {  @class = "glyphicon glyphicon-folder-open" }) |
-            @Html.ActionLink("Edit", "Edit", new { id = item.CODEASSO }) |
-            @Html.ActionLink("Details", "Details", new { id = item.CODEASSO }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.CODEASSO })
+            <a href=" @Url.Action("Edit", "Association", new { id = item.CODEASSO })"><span class="glyphicon glyphicon-edit"></span></a> !
+            <a href=" @Url.Action("Details", "Association", new { id = item.CODEASSO })"><span class="glyphicon glyphicon-list"></span></a> !
+   <a href=" @Url.Action("Delete", "Association", new { id = item.CODEASSO })"><span class="glyphicon glyphicon-remove-circle"></span></a>
+
         </td>
     </tr>
     }

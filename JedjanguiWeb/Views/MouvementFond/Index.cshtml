@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<JedjanguiWeb.Models.MouvementFond>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = JedjanguiWeb.Resources.Layout.Layout.TitreMouvement;
 }
 
-<h2>Index</h2>
+<h2>@JedjanguiWeb.Resources.Layout.Layout.TitreMouvement</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.TitreAjouter, "Create")
 </p>
 <table class="table">
     <tr>

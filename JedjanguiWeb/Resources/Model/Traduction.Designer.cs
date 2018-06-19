@@ -97,11 +97,29 @@ namespace JedjanguiWeb.Resources.Model {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Credit.
+        /// </summary>
+        public static string Credit {
+            get {
+                return ResourceManager.GetString("Credit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date de Creation.
         /// </summary>
         public static string Date {
             get {
                 return ResourceManager.GetString("Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date d&apos;adhesion.
+        /// </summary>
+        public static string DateAdhession {
+            get {
+                return ResourceManager.GetString("DateAdhession", resourceCulture);
             }
         }
         
@@ -115,6 +133,78 @@ namespace JedjanguiWeb.Resources.Model {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date de Naissance.
+        /// </summary>
+        public static string DateNaissance {
+            get {
+                return ResourceManager.GetString("DateNaissance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Debit.
+        /// </summary>
+        public static string Debit {
+            get {
+                return ResourceManager.GetString("Debit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Debut de l&apos;exercice.
+        /// </summary>
+        public static string DebutExo {
+            get {
+                return ResourceManager.GetString("DebutExo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eloge.
+        /// </summary>
+        public static string Eloge {
+            get {
+                return ResourceManager.GetString("Eloge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fin de l&apos;exercice.
+        /// </summary>
+        public static string FinExo {
+            get {
+                return ResourceManager.GetString("FinExo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fin de saisie.
+        /// </summary>
+        public static string FinSaisie {
+            get {
+                return ResourceManager.GetString("FinSaisie", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Occupation.
+        /// </summary>
+        public static string Fonction {
+            get {
+                return ResourceManager.GetString("Fonction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ref.
         /// </summary>
         public static string ID {
@@ -124,11 +214,119 @@ namespace JedjanguiWeb.Resources.Model {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Interet.
+        /// </summary>
+        public static string Interet {
+            get {
+                return ResourceManager.GetString("Interet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  Interest Precedent.
+        /// </summary>
+        public static string InteretAvant {
+            get {
+                return ResourceManager.GetString("InteretAvant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lieu de Reunion.
+        /// </summary>
+        public static string LieuRencontre {
+            get {
+                return ResourceManager.GetString("LieuRencontre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Matricule.
+        /// </summary>
+        public static string Matricule {
+            get {
+                return ResourceManager.GetString("Matricule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Montant.
+        /// </summary>
+        public static string Montant {
+            get {
+                return ResourceManager.GetString("Montant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Montant Precedent.
+        /// </summary>
+        public static string MontantAvant {
+            get {
+                return ResourceManager.GetString("MontantAvant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nombre d&apos;enfant.
+        /// </summary>
+        public static string NbEnfant {
+            get {
+                return ResourceManager.GetString("NbEnfant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nom.
         /// </summary>
         public static string Nom {
             get {
                 return ResourceManager.GetString("Nom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nom de l&apos;exercice.
+        /// </summary>
+        public static string NomExo {
+            get {
+                return ResourceManager.GetString("NomExo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Observation.
+        /// </summary>
+        public static string Note {
+            get {
+                return ResourceManager.GetString("Note", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Poste.
+        /// </summary>
+        public static string PosteExercice {
+            get {
+                return ResourceManager.GetString("PosteExercice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Residence.
+        /// </summary>
+        public static string Residence {
+            get {
+                return ResourceManager.GetString("Residence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Genre.
+        /// </summary>
+        public static string Sexe {
+            get {
+                return ResourceManager.GetString("Sexe", resourceCulture);
             }
         }
         
@@ -151,11 +349,56 @@ namespace JedjanguiWeb.Resources.Model {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Solde.
+        /// </summary>
+        public static string Solde {
+            get {
+                return ResourceManager.GetString("Solde", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Statut.
         /// </summary>
         public static string Statut {
             get {
                 return ResourceManager.GetString("Statut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statut Matrimoniale.
+        /// </summary>
+        public static string StatutMatrimoniale {
+            get {
+                return ResourceManager.GetString("StatutMatrimoniale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telephone.
+        /// </summary>
+        public static string Telephone {
+            get {
+                return ResourceManager.GetString("Telephone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Titre.
+        /// </summary>
+        public static string Titre {
+            get {
+                return ResourceManager.GetString("Titre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string TypeFond {
+            get {
+                return ResourceManager.GetString("TypeFond", resourceCulture);
             }
         }
     }

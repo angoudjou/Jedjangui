@@ -54,6 +54,9 @@ namespace JedjanguiWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "CODEEXO,CODEASSO,DEBUTEXO,FINEXO,STATUTEXO,NOMEXO,FINSAISIE")] Exercice exercice)
         {
+            int asso = int.Parse(Session["CODEASSO"].ToString());
+            exercice.CODEASSO = asso;
+
             if (ModelState.IsValid)
             {
                 db.Exercices.Add(exercice);

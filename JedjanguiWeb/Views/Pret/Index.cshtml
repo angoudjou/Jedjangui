@@ -3,13 +3,13 @@
 @using PagedList.Mvc;
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = @JedjanguiWeb.Resources.Layout.Layout.TitrePret;
 }
 
-<h2>Index</h2>
+<h2>@JedjanguiWeb.Resources.Layout.Layout.TitrePret</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.TitreAjouter, "Create")
 </p>
 <form class="form-group" action="~/Pret/Index">
     @Html.Label("Chercher")

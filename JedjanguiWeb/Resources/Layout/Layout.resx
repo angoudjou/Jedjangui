@@ -117,12 +117,96 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Chercher" xml:space="preserve">
+    <value>Find</value>
+    <comment>Libelle de la zone de recherche</comment>
+  </data>
   <data name="Description" xml:space="preserve">
     <value>Plateforme de Gestions des Associations</value>
-    <comment>description</comment>
+  </data>
+  <data name="MenuAssociation" xml:space="preserve">
+    <value>Associations</value>
+  </data>
+  <data name="MenuExercice" xml:space="preserve">
+    <value>Exercice</value>
+  </data>
+  <data name="MenuFond" xml:space="preserve">
+    <value>Fonds</value>
+  </data>
+  <data name="MenuHome" xml:space="preserve">
+    <value>Accueil</value>
+  </data>
+  <data name="MenuInscris" xml:space="preserve">
+    <value>Membres Inscris</value>
+  </data>
+  <data name="MenuMembre" xml:space="preserve">
+    <value>Membres</value>
+  </data>
+  <data name="MenuOperation" xml:space="preserve">
+    <value>Operation Financieres</value>
+  </data>
+  <data name="MenuPresence" xml:space="preserve">
+    <value>Presence</value>
+  </data>
+  <data name="MenuPret" xml:space="preserve">
+    <value>Pret</value>
+  </data>
+  <data name="MenuRemboursement" xml:space="preserve">
+    <value>Remboursement</value>
+  </data>
+  <data name="MenuSeance" xml:space="preserve">
+    <value>Seances</value>
+  </data>
+  <data name="MenuSoldeFund" xml:space="preserve">
+    <value>Solde Fond</value>
   </data>
   <data name="Titre" xml:space="preserve">
-    <value>AENGO Djangui</value>
-    <comment>titre de l'application</comment>
+    <value>JeDjanguiOnline</value>
+  </data>
+  <data name="TitreAjouter" xml:space="preserve">
+    <value>Nouveau</value>
+  </data>
+  <data name="TitreAssociation" xml:space="preserve">
+    <value>Liste des  associations</value>
+  </data>
+  <data name="TitreExercice" xml:space="preserve">
+    <value>Les Exercises</value>
+  </data>
+  <data name="TitreFond" xml:space="preserve">
+    <value>Les fonds de l'associations</value>
+  </data>
+  <data name="TitreInscris" xml:space="preserve">
+    <value>Les membres incris de l'exercices</value>
+  </data>
+  <data name="TitreListeAssociation" xml:space="preserve">
+    <value>Associations</value>
+  </data>
+  <data name="TitreListeMembre" xml:space="preserve">
+    <value>Membres de l'Association</value>
+  </data>
+  <data name="TitreMembre" xml:space="preserve">
+    <value>Liste de Membres</value>
+  </data>
+  <data name="TitreMouvement" xml:space="preserve">
+    <value>Les mouvements Financiers</value>
+  </data>
+  <data name="TitrePret" xml:space="preserve">
+    <value>Les prets des membres</value>
+  </data>
+  <data name="TitreRemboursement" xml:space="preserve">
+    <value>Remboursement des prets</value>
+  </data>
+  <data name="TitreRetourALaListe" xml:space="preserve">
+    <value>Retour a la liste</value>
+  </data>
+  <data name="TitreSeance" xml:space="preserve">
+    <value>Les seances de rencontre</value>
+  </data>
+  <data name="TitreSodeFond" xml:space="preserve">
+    <value>Situation des fonds</value>
+  </data>
+  <data name="TypeFond1" xml:space="preserve">
+    <value>Mamagement</value>
+    <comment>type de fond d'une association</comment>
   </data>
 </root>

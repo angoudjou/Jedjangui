@@ -1,18 +1,19 @@
 ﻿@model PagedList.IPagedList<JedjanguiWeb.Models.Membre>
 @using PagedList.Mvc;
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = JedjanguiWeb.Resources.Layout.Layout.TitreMembre;
 }
 
-<h2>Liste des memebres de l'association</h2>
+<h2>@JedjanguiWeb.Resources.Layout.Layout.TitreMembre</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.TitreAjouter, "Create")
 </p>
 
-<form class="form-group" action="~/Membre/Index">
-    @Html.Label("Chercher")
-    <input type="search" name="SearchString" value=@ViewBag.SearchString>
+<form class="form-inline" action="~/Membre/Index">
+   
+    @Html.Label(JedjanguiWeb.Resources.Layout.Layout.Chercher)
+    <input type="search" class="form-control" name="SearchString" value=@ViewBag.SearchString>
     <input type="submit" class="btn btn-default" />
 </form>
 
@@ -29,9 +30,7 @@
             @Html.DisplayNameFor(model => model.FirstOrDefault().DATEADEHSIONMEMEBRE)
         </th>
 
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().STATUTMEMBRE)
-        </th>
+        
 
         <th>
             @Html.DisplayNameFor(model => model.FirstOrDefault().TITREMEMBRE)
@@ -60,10 +59,7 @@
                 @Html.DisplayFor(modelItem => item.DATEADEHSIONMEMEBRE)
             </td>
 
-            <td>
-                @Html.DisplayFor(modelItem => item.STATUTMEMBRE)
-            </td>
-
+           
             <td>
                 @Html.DisplayFor(modelItem => item.TITREMEMBRE)
             </td>

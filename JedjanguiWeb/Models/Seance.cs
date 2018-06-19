@@ -14,13 +14,13 @@ namespace JedjanguiWeb.Models
         public long CODESEANCE { get; set; }
         public long CODEEXO { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:d}")]
+        [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public DateTime? DATESEANCE { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:t}")]
+        [DisplayFormat(DataFormatString = "{0:t}", ApplyFormatInEditMode = true)]
         public DateTime? DEBUTSEANCE { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:t}")]
+        [DisplayFormat(DataFormatString = "{0:t}", ApplyFormatInEditMode = true)]
         public DateTime? FINSEANCE { get; set; }
         public string STATUTSEANCE { get; set; } = "o";
         public string NOMSEANCE { get; set; }

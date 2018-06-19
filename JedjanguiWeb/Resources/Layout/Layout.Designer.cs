@@ -61,6 +61,15 @@ namespace JedjanguiWeb.Resources.Layout {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Find.
+        /// </summary>
+        public static string Chercher {
+            get {
+                return ResourceManager.GetString("Chercher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Plateforme de Gestions des Associations.
         /// </summary>
         public static string Description {
@@ -70,11 +79,254 @@ namespace JedjanguiWeb.Resources.Layout {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AENGO Djangui.
+        ///   Looks up a localized string similar to Associations.
+        /// </summary>
+        public static string MenuAssociation {
+            get {
+                return ResourceManager.GetString("MenuAssociation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exercice.
+        /// </summary>
+        public static string MenuExercice {
+            get {
+                return ResourceManager.GetString("MenuExercice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fonds.
+        /// </summary>
+        public static string MenuFond {
+            get {
+                return ResourceManager.GetString("MenuFond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Accueil.
+        /// </summary>
+        public static string MenuHome {
+            get {
+                return ResourceManager.GetString("MenuHome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Membres Inscris.
+        /// </summary>
+        public static string MenuInscris {
+            get {
+                return ResourceManager.GetString("MenuInscris", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Membres.
+        /// </summary>
+        public static string MenuMembre {
+            get {
+                return ResourceManager.GetString("MenuMembre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Operation Financieres.
+        /// </summary>
+        public static string MenuOperation {
+            get {
+                return ResourceManager.GetString("MenuOperation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Presence.
+        /// </summary>
+        public static string MenuPresence {
+            get {
+                return ResourceManager.GetString("MenuPresence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pret.
+        /// </summary>
+        public static string MenuPret {
+            get {
+                return ResourceManager.GetString("MenuPret", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remboursement.
+        /// </summary>
+        public static string MenuRemboursement {
+            get {
+                return ResourceManager.GetString("MenuRemboursement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Seances.
+        /// </summary>
+        public static string MenuSeance {
+            get {
+                return ResourceManager.GetString("MenuSeance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solde Fond.
+        /// </summary>
+        public static string MenuSoldeFund {
+            get {
+                return ResourceManager.GetString("MenuSoldeFund", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to JeDjanguiOnline.
         /// </summary>
         public static string Titre {
             get {
                 return ResourceManager.GetString("Titre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nouveau.
+        /// </summary>
+        public static string TitreAjouter {
+            get {
+                return ResourceManager.GetString("TitreAjouter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Liste des  associations.
+        /// </summary>
+        public static string TitreAssociation {
+            get {
+                return ResourceManager.GetString("TitreAssociation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Les Exercises.
+        /// </summary>
+        public static string TitreExercice {
+            get {
+                return ResourceManager.GetString("TitreExercice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Les fonds de l&apos;associations.
+        /// </summary>
+        public static string TitreFond {
+            get {
+                return ResourceManager.GetString("TitreFond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Les membres incris de l&apos;exercices.
+        /// </summary>
+        public static string TitreInscris {
+            get {
+                return ResourceManager.GetString("TitreInscris", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Associations.
+        /// </summary>
+        public static string TitreListeAssociation {
+            get {
+                return ResourceManager.GetString("TitreListeAssociation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Membres de l&apos;Association.
+        /// </summary>
+        public static string TitreListeMembre {
+            get {
+                return ResourceManager.GetString("TitreListeMembre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Liste de Membres.
+        /// </summary>
+        public static string TitreMembre {
+            get {
+                return ResourceManager.GetString("TitreMembre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Les mouvements Financiers.
+        /// </summary>
+        public static string TitreMouvement {
+            get {
+                return ResourceManager.GetString("TitreMouvement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Les prets des membres.
+        /// </summary>
+        public static string TitrePret {
+            get {
+                return ResourceManager.GetString("TitrePret", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remboursement des prets.
+        /// </summary>
+        public static string TitreRemboursement {
+            get {
+                return ResourceManager.GetString("TitreRemboursement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Retour a la liste.
+        /// </summary>
+        public static string TitreRetourALaListe {
+            get {
+                return ResourceManager.GetString("TitreRetourALaListe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Les seances de rencontre.
+        /// </summary>
+        public static string TitreSeance {
+            get {
+                return ResourceManager.GetString("TitreSeance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Situation des fonds.
+        /// </summary>
+        public static string TitreSodeFond {
+            get {
+                return ResourceManager.GetString("TitreSodeFond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mamagement.
+        /// </summary>
+        public static string TypeFond1 {
+            get {
+                return ResourceManager.GetString("TypeFond1", resourceCulture);
             }
         }
     }

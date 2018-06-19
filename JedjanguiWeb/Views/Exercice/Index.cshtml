@@ -1,41 +1,40 @@
 ﻿@model IEnumerable<JedjanguiWeb.Models.Exercice>
 
 @{
-    ViewBag.Title = "Liste des exercices";
+    ViewBag.Title = JedjanguiWeb.Resources.Layout.Layout.TitreExercice;
 }
 
-<h2>Liste des exercices</h2>
+<h2>@JedjanguiWeb.Resources.Layout.Layout.TitreExercice</h2>
 
 <p>
-    @Html.ActionLink("Create New exercice", "Create")
+    @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.TitreAjouter, "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.ASSOCIATION.NOMASSO)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().NOMEXO)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DEBUTEXO)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().DEBUTEXO)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FINEXO)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().FINEXO)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.STATUTEXO)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().STATUTEXO)
         </th>
+
         <th>
-            @Html.DisplayNameFor(model => model.NOMEXO)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FINSAISIE)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().FINSAISIE)
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+
         <td>
-            @Html.DisplayFor(modelItem => item.ASSOCIATION.NOMASSO)
+            @Html.DisplayFor(modelItem => item.NOMEXO)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DEBUTEXO)
@@ -46,18 +45,16 @@
         <td>
             @Html.DisplayFor(modelItem => item.STATUTEXO)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NOMEXO)
-        </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.FINSAISIE)
         </td>
         <td>
-           
-            @Html.ActionLink("Ouvri", "Ouvrir", new { id = item.CODEEXO  }, new { @class = "glyphicon glyphicon-open"}) |
+
+            @Html.ActionLink("Ouvri", "Ouvrir", new { id = item.CODEEXO }, new { @class = "glyphicon glyphicon-open" }) |
             @Html.ActionLink("Edit", "Edit", new { id = item.CODEEXO }) |
             @Html.ActionLink("Details", "Details", new { id = item.CODEEXO }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.CODEEXO }) 
+            @Html.ActionLink("Delete", "Delete", new { id = item.CODEEXO })
 
         </td>
     </tr>

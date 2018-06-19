@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
@@ -7,25 +8,22 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using JedjanguiWeb.DAL;
+using JedjanguiWeb.DesignPattern;
 using JedjanguiWeb.Models;
+using PagedList;
 
 namespace JedjanguiWeb.Controllers
 {
-   public enum typefond  
-    {
-        Gestion,
-        Cotisation,
-
-    }
+  
 
     public class FondController : Controller
     {
         private JeDjanguiContext db = new JeDjanguiContext();
         int codeasso=0;
-
+        
 
         // GET: Fond
-        public ActionResult Index()
+        public ActionResult Index(int page=1)
         {
             if (Session["CODEASSO"] != null)
                 codeasso = int.Parse(Session["CODEASSO"].ToString());
@@ -33,7 +31,7 @@ namespace JedjanguiWeb.Controllers
             var fonds = db.Fonds.Where(c => c.CODEASSO.Equals(codeasso));
                 //.Include(f => f.ASSOCIATION);
 
-            return View(fonds.ToList());
+            return View(fonds.OrderBy(u=>u.NOMFOND).ToPagedList(page, Singleton.pageSize));
         }
 
         // GET: Fond/Details/5
@@ -55,7 +53,7 @@ namespace JedjanguiWeb.Controllers
         public ActionResult Create()
         {
            // var type_fond = (from elt in Enum.GetValues(typeof(typefond)).Cast<typefond>().Select(v=>v.ToString()) select new { value = elt}).ToList();
-           var  type_fond = (from elt in Enum.GetValues(typeof(typefond)).Cast<typefond>() select new { value = elt.ToString() }).ToList();
+           var  type_fond = (from elt in Enum.GetValues(typeof( Singleton.typefond)).Cast<Singleton.typefond>() select new { value = elt.ToString() }).ToList();
          ViewBag.typefond = new  SelectList(type_fond, "value","value");
 
             ViewBag.CODEASSO = new SelectList(db.Associations, "CODEASSO", "NOMASSO");
@@ -94,7 +92,7 @@ namespace JedjanguiWeb.Controllers
             {
                 return HttpNotFound();
             }
-            var type_fond = (from elt in Enum.GetValues(typeof(typefond)).Cast<typefond>() select new { value = elt.ToString() }).ToList();
+            var type_fond = (from elt in Enum.GetValues(typeof(Singleton.typefond)).Cast<Singleton.typefond>() select new { value = elt.ToString() }).ToList();
             ViewBag.typefond = new SelectList(type_fond, "value", "value",fond.TYPEFOND);
 
             ViewBag.CODEASSO = new SelectList(db.Associations, "CODEASSO", "NOMASSO", fond.CODEASSO);

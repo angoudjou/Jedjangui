@@ -1,7 +1,7 @@
 ﻿@model JedjanguiWeb.Models.Fond
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = JedjanguiWeb.Resources.Layout.Layout.TitreAjouter;
 }
 
 <h2>Create</h2>
@@ -47,16 +47,7 @@
         </div>
     </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.OBLIGATOIRE, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <div class="checkbox">
-                @Html.EditorFor(model => model.OBLIGATOIRE)
-                @Html.ValidationMessageFor(model => model.OBLIGATOIRE, "", new { @class = "text-danger" })
-            </div>
-        </div>
-    </div>
-
+   
     
     <div class="form-group">
         @Html.LabelFor(model => model.TYPEFOND, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -75,5 +66,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.TitreRetourALaListe, "Index")
 </div>

@@ -129,17 +129,83 @@
   <data name="CompteBanque" xml:space="preserve">
     <value>Compte Bancaire</value>
   </data>
+  <data name="Credit" xml:space="preserve">
+    <value>Credit</value>
+  </data>
   <data name="Date" xml:space="preserve">
     <value>Date de Creation</value>
+  </data>
+  <data name="DateAdhession" xml:space="preserve">
+    <value>Date d'adhesion</value>
   </data>
   <data name="DateAjouter" xml:space="preserve">
     <value>Ajouter le</value>
   </data>
+  <data name="DateNaissance" xml:space="preserve">
+    <value>Date de Naissance</value>
+  </data>
+  <data name="Debit" xml:space="preserve">
+    <value>Debit</value>
+  </data>
+  <data name="DebutExo" xml:space="preserve">
+    <value>Debut de l'exercice</value>
+  </data>
+  <data name="Eloge" xml:space="preserve">
+    <value>Eloge</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="FinExo" xml:space="preserve">
+    <value>Fin de l'exercice</value>
+  </data>
+  <data name="FinSaisie" xml:space="preserve">
+    <value>Fin de saisie</value>
+  </data>
+  <data name="Fonction" xml:space="preserve">
+    <value>Occupation</value>
+  </data>
   <data name="ID" xml:space="preserve">
     <value>Ref</value>
   </data>
+  <data name="Interet" xml:space="preserve">
+    <value>Interet</value>
+  </data>
+  <data name="InteretAvant" xml:space="preserve">
+    <value> Interest Precedent</value>
+  </data>
+  <data name="LieuRencontre" xml:space="preserve">
+    <value>Lieu de Reunion</value>
+  </data>
+  <data name="Matricule" xml:space="preserve">
+    <value>Matricule</value>
+  </data>
+  <data name="Montant" xml:space="preserve">
+    <value>Montant</value>
+  </data>
+  <data name="MontantAvant" xml:space="preserve">
+    <value>Montant Precedent</value>
+  </data>
+  <data name="NbEnfant" xml:space="preserve">
+    <value>Nombre d'enfant</value>
+  </data>
   <data name="Nom" xml:space="preserve">
     <value>Nom</value>
+  </data>
+  <data name="NomExo" xml:space="preserve">
+    <value>Nom de l'exercice</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>Observation</value>
+  </data>
+  <data name="PosteExercice" xml:space="preserve">
+    <value>Poste</value>
+  </data>
+  <data name="Residence" xml:space="preserve">
+    <value>Residence</value>
+  </data>
+  <data name="Sexe" xml:space="preserve">
+    <value>Genre</value>
   </data>
   <data name="Sigle" xml:space="preserve">
     <value>Sigle</value>
@@ -147,7 +213,22 @@
   <data name="Slogan" xml:space="preserve">
     <value>Slogan</value>
   </data>
+  <data name="Solde" xml:space="preserve">
+    <value>Solde</value>
+  </data>
   <data name="Statut" xml:space="preserve">
     <value>Statut</value>
+  </data>
+  <data name="StatutMatrimoniale" xml:space="preserve">
+    <value>Statut Matrimoniale</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>Telephone</value>
+  </data>
+  <data name="Titre" xml:space="preserve">
+    <value>Titre</value>
+  </data>
+  <data name="TypeFond" xml:space="preserve">
+    <value>Type</value>
   </data>
 </root>

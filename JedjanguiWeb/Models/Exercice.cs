@@ -9,18 +9,28 @@ namespace JedjanguiWeb.Models
     public class Exercice
     {
         [Key]
+        [Display(Name = "ID", ResourceType = typeof(JedjanguiWeb.Resources.Model.Traduction))]
+
         public long CODEEXO { get; set; }
         public long? CODEASSO { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:d}")]
+        [DisplayFormat(DataFormatString = "{0:d}" , ApplyFormatInEditMode =true)]
+        [Display(Name = "DebutExo", ResourceType = typeof(JedjanguiWeb.Resources.Model.Traduction))]
+
         public DateTime? DEBUTEXO { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:d}")]
+        [Display(Name = "FinExo", ResourceType = typeof(JedjanguiWeb.Resources.Model.Traduction))]
+
+        [DisplayFormat(DataFormatString = "{0:d}" , ApplyFormatInEditMode =true)]
         public DateTime? FINEXO { get; set; }
+        [Display(Name = "Statut", ResourceType = typeof(JedjanguiWeb.Resources.Model.Traduction))]
         public Boolean STATUTEXO { get; set; } = true;
+        [Display(Name = "NomExo", ResourceType = typeof(JedjanguiWeb.Resources.Model.Traduction))]
+
         public string NOMEXO { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:d}")]
+        [Display(Name = "FinSaisie", ResourceType = typeof(JedjanguiWeb.Resources.Model.Traduction))]
+        [DisplayFormat(DataFormatString = "{0:d}" , ApplyFormatInEditMode =true)]
         public DateTime? FINSAISIE { get; set; }
 
         public virtual Association ASSOCIATION { get; set; }

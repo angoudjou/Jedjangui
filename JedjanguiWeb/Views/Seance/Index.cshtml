@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<JedjanguiWeb.Models.Seance>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = JedjanguiWeb.Resources.Layout.Layout.TitreSeance ;
 }
 
-<h2>Les seancs de l'exercices @Session["CODEASSO"]</h2>
+<h2>@JedjanguiWeb.Resources.Layout.Layout.TitreSeance   @Session["CODEASSO"]</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -26,15 +26,11 @@
         <th>
             @Html.DisplayNameFor(model => model.STATUTSEANCE)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NOMSEANCE)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.LIEUSEANCE)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.COMPTERENDUSEANCE)
-        </th>
+       
         <th></th>
     </tr>
 
@@ -55,15 +51,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.STATUTSEANCE)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NOMSEANCE)
-        </td>
+      
         <td>
             @Html.DisplayFor(modelItem => item.LIEUSEANCE)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.COMPTERENDUSEANCE)
-        </td>
+      
         <td>
             @Html.ActionLink("Ouvrir", "Ouvrir", new { id = item.CODESEANCE }) |
             @Html.ActionLink("Edit", "Edit", new { id = item.CODESEANCE }) |

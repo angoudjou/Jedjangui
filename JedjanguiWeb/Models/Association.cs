@@ -55,6 +55,9 @@ namespace JedjanguiWeb.Models
 
         public string ADDRESSEASSO { get; set; }
         public string MOTPASSEASSO { get; set; }
+
+        [Display(Name = "LieuRencontre", ResourceType = typeof(JedjanguiWeb.Resources.Model.Traduction))]
+
         public string LIEURENCONTRE { get; set; }
         public string CODEUTILISATEUR { get; set; }
 

@@ -11,9 +11,12 @@ namespace JedjanguiWeb.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Display(Name = "ID", ResourceType = typeof(JedjanguiWeb.Resources.Model.Traduction))]
         public long CODEINSCRIPTIONEXERCICE { get; set; }
         public long CODEMEMBRE { get; set; }
         public long CODEEXO { get; set; }
+
+        [Display(Name = "PosteExercice", ResourceType = typeof(JedjanguiWeb.Resources.Model.Traduction))]
         public string POSTEMEMBREEXO { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:d}")]
