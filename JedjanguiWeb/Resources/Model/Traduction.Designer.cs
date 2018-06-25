@@ -106,7 +106,7 @@ namespace JedjanguiWeb.Resources.Model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Date de Creation.
+        ///   Looks up a localized string similar to Date.
         /// </summary>
         public static string Date {
             get {
@@ -129,6 +129,33 @@ namespace JedjanguiWeb.Resources.Model {
         public static string DateAjouter {
             get {
                 return ResourceManager.GetString("DateAjouter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date de creation.
+        /// </summary>
+        public static string DateCreation {
+            get {
+                return ResourceManager.GetString("DateCreation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date de Debut.
+        /// </summary>
+        public static string DateDebut {
+            get {
+                return ResourceManager.GetString("DateDebut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date de fin.
+        /// </summary>
+        public static string DateFin {
+            get {
+                return ResourceManager.GetString("DateFin", resourceCulture);
             }
         }
         
@@ -156,6 +183,15 @@ namespace JedjanguiWeb.Resources.Model {
         public static string DebutExo {
             get {
                 return ResourceManager.GetString("DebutExo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Duree.
+        /// </summary>
+        public static string Duree {
+            get {
+                return ResourceManager.GetString("Duree", resourceCulture);
             }
         }
         
@@ -259,11 +295,29 @@ namespace JedjanguiWeb.Resources.Model {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Montant a rembourser.
+        /// </summary>
+        public static string MontantARembourser {
+            get {
+                return ResourceManager.GetString("MontantARembourser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Montant Precedent.
         /// </summary>
         public static string MontantAvant {
             get {
                 return ResourceManager.GetString("MontantAvant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Montant Rembourse.
+        /// </summary>
+        public static string MontantRembourser {
+            get {
+                return ResourceManager.GetString("MontantRembourser", resourceCulture);
             }
         }
         
@@ -291,6 +345,15 @@ namespace JedjanguiWeb.Resources.Model {
         public static string NomExo {
             get {
                 return ResourceManager.GetString("NomExo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nom du Fond.
+        /// </summary>
+        public static string NomFond {
+            get {
+                return ResourceManager.GetString("NomFond", resourceCulture);
             }
         }
         
@@ -399,6 +462,15 @@ namespace JedjanguiWeb.Resources.Model {
         public static string TypeFond {
             get {
                 return ResourceManager.GetString("TypeFond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valider?.
+        /// </summary>
+        public static string Valider {
+            get {
+                return ResourceManager.GetString("Valider", resourceCulture);
             }
         }
     }

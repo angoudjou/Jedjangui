@@ -128,7 +128,7 @@
     <value>Associations</value>
   </data>
   <data name="MenuExercice" xml:space="preserve">
-    <value>Exercises</value>
+    <value>Years</value>
   </data>
   <data name="MenuFond" xml:space="preserve">
     <value>Funds</value>
@@ -170,7 +170,7 @@
     <value>List of associations</value>
   </data>
   <data name="TitreExercice" xml:space="preserve">
-    <value>Exercises</value>
+    <value>Year</value>
   </data>
   <data name="TitreFond" xml:space="preserve">
     <value>Funds</value>
@@ -179,10 +179,10 @@
     <value>Registered members of the exercise</value>
   </data>
   <data name="TitreListeAssociation" xml:space="preserve">
-    <value>Liste des Associations</value>
+    <value>List of associations</value>
   </data>
   <data name="TitreListeMembre" xml:space="preserve">
-    <value>Liste des Membres</value>
+    <value>List of Members</value>
   </data>
   <data name="TitreMembre" xml:space="preserve">
     <value>Members</value>

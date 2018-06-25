@@ -30,18 +30,44 @@ namespace JedjanguiWeb.Controllers
             if (Session["Email"] != null)
             {
                 asso = asso.Where(f => f.EMAIL == Session["Email"].ToString()).ToList();
+                Singleton.NbAssoUser = asso.Count();
   //if his has only 1 association then we open directly
             if (asso.Count() == 1)
-                  return   RedirectToAction("Ouvrir", "Association", new { id = asso.First().CODEASSO });
+                {
+                return   RedirectToAction("Ouvrir", "Association", new { id = asso.First().CODEASSO });
+
+                }
+                else
+                if(asso.Count() ==0)
+                {
+                    // no association created yet, we create a default association for the user
+                    Factory fact = new Factory();
+                    Association _ass =  fact.CreateDefaultAssociation();
+              return       RedirectToAction("Ouvrir", "Association", new { id = _ass.CODEASSO });
+
+                }
+            else
+                {
+
+                    if (string.IsNullOrEmpty(SearchString))
+                        return View(asso.OrderBy(l => l.NOMASSO).ToPagedList(Page, Singleton.pageSize));
+                    else
+                        return View(asso.Where(f => f.NOMASSO.Contains(SearchString)).OrderBy(l => l.NOMASSO).ToPagedList(Page, Singleton.pageSize));
+
+                }
 
             }
-          
-            if (string.IsNullOrEmpty(SearchString))
+            else
+            {
+                if (string.IsNullOrEmpty(SearchString))
             return View(asso.OrderBy(l=>l.NOMASSO).ToPagedList(Page , Singleton.pageSize));
             else
                 return View(asso.Where(f => f.NOMASSO.Contains(SearchString)).OrderBy(l => l.NOMASSO).ToPagedList(Page, Singleton.pageSize));
+          //return HttpNotFound();
+                //return RedirectToAction("Index", "Home");
+            }
 
-          //  return View(asso.Where(f=>f.NOMASSO.Contains(SearchString) || f.SIGLEASSO.Contains(SearchString)).OrderBy(l => l.NOMASSO).ToPagedList(Page,Singleton.pageSize));
+            //  return View(asso.Where(f=>f.NOMASSO.Contains(SearchString) || f.SIGLEASSO.Contains(SearchString)).OrderBy(l => l.NOMASSO).ToPagedList(Page,Singleton.pageSize));
 
         }
 
@@ -70,6 +96,7 @@ namespace JedjanguiWeb.Controllers
         public ActionResult Ouvrir(long? id)
         {
               Factory factory = new Factory();
+        //    factory.i
             if(id != null)
             {
                 Association asso = db.Associations.Find(id);
@@ -188,7 +215,14 @@ namespace JedjanguiWeb.Controllers
             {
                 db.Entry(association).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                if (Singleton.NbAssoUser>1)
+                {
+return RedirectToAction("Index");
+                }
+                else
+
+                    return RedirectToAction("Index", "Membre");
+
             }
             return View(association);
         }

@@ -22,25 +22,76 @@
                 <div>
                     @Html.ActionLink("JedjanguiOnline", "Index", "Home", new { area = "" }, new { @class = "nav-band" })
                     <br />
-                    @Html.Label(JedjanguiWeb.Resources.Layout.Layout.Description,  new { @class = "nav-band" })
+                    @Html.Label(JedjanguiWeb.Resources.Layout.Layout.Description, new { @class = "" })
                 </div>
-              
+
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse text-center">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuHome, "Index", "Home")</li>
+                    <li >@Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuHome, "Index", "Home")</li>
 
                     @if (Session["CODEASSO"] != null)
                     {
+                        if (JedjanguiWeb.DesignPattern.Singleton.NbAssoUser > 1)
+                        {
+                            <li> @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuAssociation, "Index", "Association") </li>
 
-                        <li> @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuAssociation, "Index", "Association") </li>
-                        <li> @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuMembre, "Index", "Membre") </li>
-                        <li> @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuFond, "Index", "Fond") </li>
-                        <li> @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuExercice, "Index", "Exercice") </li>
-                       
+                        }
+                        <li > @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuMembre, "Index", "Membre") </li>
+                        <li > @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuFond, "Index", "Fond") </li>
+                        <li > @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuExercice, "Index", "Exercice") </li>
+
                     }
 
                 </ul>
+                @if (Session["CODEEXO"] != null)
+                {
+                    <div class="dropdown btn-group">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownExercice" data-toggle="dropdown">
+                            @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuExercice, "Index", "Exercice")
+                            <span class="caret"></span>
+                        </button>
+
+                        <div class="dropdown-menu">
+                            <li>@Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuInscris, "Inscris", "Exercice")</li>
+                            <li>@Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuSoldeFund, "BalanceFond", "Fond")</li>
+                            <li>@Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuSeance, "Index", "Seance", new { codeexo = Session["CODEEXO"].ToString() }, null)</li>
+                        </div>
+
+                    </div>
+                }
+
+                @if (Session["CODESEANCE"] != null)
+                {
+                    <div class=" dropdown btn-group">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownSeance" data-toggle="dropdown">
+                            @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuSeance, "Index", "Seance", new { codeexo = Session["CODEEXO"].ToString() }, null)
+
+                            <span class="caret"></span>
+                        </button>
+
+                        <ul class=" dropdown-menu">
+                            <li>@Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuSoldeFund, "Index", "FondSeance")</li>
+
+                            <li>@Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuOperation, "Index", "FondSeance")</li>
+                            <li>@Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuPresence, "Presence", "Seance")</li>
+                        </ul>
+
+                    </div>
+                    <div class=" dropdown btn-group">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownSeance" data-toggle="dropdown">
+                            @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuPret, "Index", "Pret")
+
+                            <span class="caret"></span>
+                        </button>
+
+                        <ul class=" dropdown-menu">
+                            <li>@Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuPret, "Index", "Pret")</li>
+                            <li>@Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuRemboursement, "Index", "Remboursementpret", new { codeseance = Session["CODESEANCE"].ToString() }, new { @class = "" })</li>
+                        </ul>
+                    </div>
+
+                }
                 @Html.Partial("_LoginPartial")
 
 
@@ -48,56 +99,17 @@
 
         </div>
     </div>
-    @if (Session["CODEEXO"] != null)
-    {
-    <div class="dropdown btn-group">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownExercice" data-toggle="dropdown">
-            @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuExercice, "Index", "Exercice")
-            <span class="caret"></span>
-        </button>
-       
-        <ul class="dropdown-menu">
-            <li>@Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuInscris, "Inscris", "Exercice")</li>
-            <li>@Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuSoldeFund, "BalanceFond", "Fond")</li>
-            <li>@Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuSeance, "Index", "Seance", new { codeexo = Session["CODEEXO"].ToString() }, null)</li>
-        </ul>
-
-    </div>
-
-
    
-    }
-    @if (Session["CODESEANCE"] != null)
-    {
-    <div class=" dropdown btn-group">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownSeance" data-toggle="dropdown">
-           @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuSeance, "Index", "Seance", new { codeexo = Session["CODEEXO"].ToString() }, null)
-
-            <span class="caret"></span>
-        </button>
-
-        <ul class=" dropdown-menu">
-            <li>@Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuSoldeFund, "Index", "FondSeance")</li>
-
-            <li>@Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuOperation, "Index", "FondSeance")</li>
-            <li>@Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuPret, "Index", "Pret")</li>
-            <li>@Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuRemboursement, "Index", "Remboursementpret", new { codeseance = Session["CODESEANCE"].ToString() }, new { @class = "" })</li>
-            <li>@Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuPresence, "Presence", "Seance")</li>
-
-        </ul>
-
-        </div >
-    }
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - ASENGO TECHNOLOGIES</p>
+
 
             @if (Session["NOMASSO"] != null)
             {
                 <p>
-                    @Session["NOMASSO"]
+                    @Html.ActionLink(Session["NOMASSO"].ToString(), "Edit", "Association", new { id = Session["CODEASSO"].ToString() }, null)
                 </p>
             }
 
@@ -114,11 +126,19 @@
 
                     sc = " Seance " + Session["CODESEANCE"].ToString();
 
-                } }
+                }
+
+                if (Session["Email"] != null)
+                {
+                    @Session["Email"];
+                }
+            }
 
             @exo
             @sc
 
+            <hr />
+            <p class="text-center">&copy; @DateTime.Now.Year - ASENGO TECHNOLOGIES</p>
         </footer>
     </div>
 

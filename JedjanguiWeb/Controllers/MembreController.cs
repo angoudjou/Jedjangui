@@ -68,9 +68,10 @@ namespace JedjanguiWeb.Controllers
                 codeasso = int.Parse(Session["CODEASSO"].ToString());
 
             ViewBag.CODEASSO = new SelectList(db.Associations, "CODEASSO", "NOMASSO");
-           
+
+            string[] typefond = { "management","gestion" };
             //list des fonds
-            var fonds = db.Fonds.Where(d => d.CODEASSO == codeasso);
+            var fonds = db.Fonds.Where(d => d.CODEASSO == codeasso && (!typefond.Contains( d.TYPEFOND.ToLower())));
             var fondmembres = new List<Fond>();
             FondMembre fm = null;
           //  fm.CODEINSCRIPTIONEXERCICE

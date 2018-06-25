@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using JedjanguiWeb.Models;
+using JedjanguiWeb.DesignPattern;
 
 namespace JedjanguiWeb.Controllers
 {
@@ -80,7 +81,7 @@ namespace JedjanguiWeb.Controllers
             {
                 case SignInStatus.Success:
                     Session["Email"] = model.Email;
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToAction("Index", "Association");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -393,6 +394,9 @@ namespace JedjanguiWeb.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            //delete all session variable
+            Factory fact = new Factory();
+            fact.Reset();
             return RedirectToAction("Index", "Home");
         }
 

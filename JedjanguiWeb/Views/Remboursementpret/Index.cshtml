@@ -9,17 +9,16 @@
 <p>
     @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.TitreAjouter, "Create")
 </p>
-<table class="table">
+<table class="table table-bordered table-striped table-responsive table-hover table-condensed">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.PRET.EMAIL)
+            @Html.DisplayNameFor(model => model.CODEREMBOURSEMENT)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.SEANCE.STATUTSEANCE)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EMAIL)
-        </th>
+        
+
         <th>
             @Html.DisplayNameFor(model => model.DATEREMBOURSEMENT)
         </th>
@@ -35,14 +34,12 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.PRET.EMAIL)
+            @Html.DisplayFor(modelItem => item.CODEREMBOURSEMENT)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.SEANCE.STATUTSEANCE)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EMAIL)
-        </td>
+       
         <td>
             @Html.DisplayFor(modelItem => item.DATEREMBOURSEMENT)
         </td>

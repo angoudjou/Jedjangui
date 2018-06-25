@@ -165,3 +165,5 @@ C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.dll
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.pdb
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.csprojAssemblyReference.cache
+C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.Resources.Layout.Text.resources
+C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.Resources.Layout.Text.en.resources

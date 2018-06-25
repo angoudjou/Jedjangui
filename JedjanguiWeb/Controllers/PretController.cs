@@ -74,13 +74,54 @@ namespace JedjanguiWeb.Controllers
                 if (Session["CODEASSO"] != null)
                 {
                     codeasso = int.Parse(Session["CODEASSO"].ToString());
+                    int codeexo = int.Parse(Session["CODEEXO"].ToString());
+                    //check if the member is in the fond in the case it is not mandatory fund
+                    Fond fd = db.Fonds.Find(pret.CODEFOND);
+                    //if it is an not mandatory fund 
+                    if ((fd.TYPEFOND.ToLower() != "management") || fd.TYPEFOND.ToLower() != "gestion")
+                    {
+                        //list of members of the fund
+                        List<long> lm = (from elt in db.FondMembres.Where(p => p.CODEFOND == pret.CODEFOND && p.INSCRISEXERCICE.CODEEXO == codeexo) select elt.INSCRISEXERCICE.CODEMEMBRE).ToList();
+                        if (lm.Contains(pret.CODEMEMBRE))
+                        {
+                            pret.CODEASSO = codeasso;
+                            pret.EMAIL = Session["Email"].ToString();
+                            pret.MONTANTAREMBOURSER = pret.MONTANTPRET + pret.INTERETPRET;
+                            db.Prets.Add(pret);
 
-                pret.CODEASSO = codeasso;
-                    pret.EMAIL = Session["Email"].ToString();
-                    pret.MONTANTAREMBOURSER = pret.MONTANTPRET + pret.INTERETPRET;
-                db.Prets.Add(pret);
-                 
-                db.SaveChanges();
+                            db.SaveChanges();
+                            return RedirectToAction("Index");
+                        }
+                        else
+                        {
+                            IEnumerable<Membre> membres = db.Membres.Where(d => d.CODEASSO == codeasso).ToList();
+                            IEnumerable<Fond> fonds = db.Fonds.Where(f => f.CODEASSO == codeasso);
+
+                            ViewBag.CODEMEMBRE = new SelectList(membres, "CODEMEMBRE", "NOMMEMBRE", pret.CODEMEMBRE);
+                            ViewBag.CODEFOND = new SelectList(fonds, "CODEFOND", "NOMFOND", pret.CODEFOND);
+                            Membre mb = db.Membres.Find(pret.CODEMEMBRE);
+                            ViewBag.ErrorMessage = "Member " + mb.NOMMEMBRE + " not in the fund " + fd.NOMFOND;
+                            return View(pret);
+                        }
+                    }
+                    else
+                    {
+                        pret.CODEASSO = codeasso;
+                        pret.EMAIL = Session["Email"].ToString();
+                        pret.MONTANTAREMBOURSER = pret.MONTANTPRET + pret.INTERETPRET;
+                        db.Prets.Add(pret);
+
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+
+                    }
+
+ 
+                    }
+                    
+                       
+             return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+              
                 }
                 else
                     return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -89,8 +130,8 @@ namespace JedjanguiWeb.Controllers
 
             }
             
-            return RedirectToAction("Index");
-        }
+           
+      
         [HttpGet]
         public ActionResult Edit(int? id)
         {

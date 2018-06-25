@@ -104,6 +104,10 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    <div>
+        @if (JedjanguiWeb.DesignPattern.Singleton.NbAssoUser > 1)
+        {
+            @Html.ActionLink("Back to List", "Index")
+        }
+
+    </div>

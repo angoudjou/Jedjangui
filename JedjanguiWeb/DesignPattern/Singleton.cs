@@ -23,6 +23,7 @@ namespace JedjanguiWeb.DesignPattern
         public static long CodeSeance { get; set; }
         //public static long CodeAsso { get; set; } 
         public static int pageSize { get; set; } = 3;
+        public static int NbAssoUser { get; set; } = 1;
 
     }
 }

@@ -26,6 +26,12 @@ namespace JedjanguiWeb.DesignPattern
             Singleton.CodeAsso = 0;
             Singleton.CodeExo = 0;
             Singleton.CodeSeance = 0;
+            Singleton.NbAssoUser = 0;
+        }
+
+        public void Reset()
+        {
+            init();
         }
         public Boolean OuvrirAssociation(long id)
         {
@@ -44,6 +50,83 @@ namespace JedjanguiWeb.DesignPattern
             }
             else
                 return false;
+        }
+        public Exercice  CreateExercice()
+        {
+        
+            Exercice exo = new Exercice();
+            exo.NOMEXO = "Annee 1";
+            exo.CODEASSO = int.Parse(HttpContext.Current.Session["CODEASSO"].ToString());  
+            exo.DEBUTEXO = DateTime.Now;
+            exo.FINEXO = DateTime.Now.AddYears(1);
+
+            db.Exercices.Add(exo);
+            db.SaveChanges();
+            // default seance
+            Seance seance = new Seance();
+            seance.CODEEXO = exo.CODEEXO;
+            seance.DATESEANCE = DateTime.Now;
+            seance.DEBUTSEANCE = DateTime.Now;
+            seance.NOMSEANCE = "Meeting 1";
+
+            db.Seances.Add(seance);
+            db.SaveChanges();
+
+            ////default fund
+            //Fond f = new Fond();
+            //f.CODEASSO = exo.CODEASSO.Value;
+            //f.NOMFOND = "Sanctions";
+            //f.OBLIGATOIRE = true;
+            //f.OBJECTIFFOND = "Caisse des sanctions";
+
+            //db.Fonds.Add(f);
+            //db.SaveChanges();
+            return exo;
+
+        }
+        public Association  CreateDefaultAssociation()
+        {
+            Association association = new Association();
+            association.EMAIL = HttpContext.Current.Session["Email"].ToString();
+            association.NOMASSO = "My Association";
+            association.SIGLEASSO = "sigle";
+            association.DATEAJOUTER = DateTime.Now;
+            association.CODEUTILISATEUR =HttpContext.Current.Session["Email"].ToString();
+            association.DATECREATIONASS = DateTime.Now;
+            association.BUTASSO = "na";
+
+            db.Associations.Add(association);
+            db.SaveChanges();
+            // defaul =t exercice and
+            Exercice exo = new Exercice();
+            exo.NOMEXO = "Annee 1";
+            exo.CODEASSO = association.CODEASSO;
+            exo.DEBUTEXO = DateTime.Now;
+            exo.FINEXO = DateTime.Now.AddYears(1);
+
+            db.Exercices.Add(exo);
+            db.SaveChanges();
+            // default seance
+            Seance seance = new Seance();
+            seance.CODEEXO = exo.CODEEXO;
+            seance.DATESEANCE = DateTime.Now;
+            seance.DEBUTSEANCE = DateTime.Now;
+            seance.NOMSEANCE = "Meeting 1";
+
+            db.Seances.Add(seance);
+            db.SaveChanges();
+
+            //default fund
+            Fond f = new Fond();
+            f.CODEASSO = association.CODEASSO;
+            f.NOMFOND = "Sanctions";
+            f.OBLIGATOIRE = true;
+            f.OBJECTIFFOND = "Caisse des sanctions";
+
+            db.Fonds.Add(f);
+            db.SaveChanges();
+            return association;
+
         }
         public Boolean OuvrirExercice(long? id)
         {
@@ -65,6 +148,7 @@ namespace JedjanguiWeb.DesignPattern
             HttpContext.Current.Session["CODESEANCE"] = sc.CODESEANCE;
             return true;
         }
+       
         public void CalculerSoldeFondSeance(long codeseance)
         {
             //sauf pour les comptes de cotisation

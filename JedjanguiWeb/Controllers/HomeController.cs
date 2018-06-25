@@ -10,17 +10,20 @@ namespace JedjanguiWeb.Controllers
     {
         public ActionResult Index()
         {
+
+
             //taken of session parameters and redirect to the list of associations
-            Session["PageSize"] = 3;
+          //  Session["PageSize"] = 3;
 
-           
-            if(Session["Email"] !=null)
+
+            if (Session["Email"] != null)
             {
-
+               
             }
+ //return RedirectToAction("Index", "Association");
+            return View();
 
- return RedirectToAction("Index","Association");
-            
+
         }
 
         public ActionResult About()

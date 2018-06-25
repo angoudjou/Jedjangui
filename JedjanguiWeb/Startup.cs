@@ -1,5 +1,6 @@
 ﻿using Microsoft.Owin;
 using Owin;
+using System.Web;
 
 [assembly: OwinStartupAttribute(typeof(JedjanguiWeb.Startup))]
 namespace JedjanguiWeb
@@ -8,7 +9,9 @@ namespace JedjanguiWeb
     {
         public void Configuration(IAppBuilder app)
         {
+             
             ConfigureAuth(app);
+           
         }
     }
 }

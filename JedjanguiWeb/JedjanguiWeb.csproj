@@ -204,7 +204,6 @@
     <Compile Include="Controllers\FondController.cs" />
     <Compile Include="Controllers\FondSeanceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoanController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MembreController.cs" />
     <Compile Include="Controllers\MouvementFondController.cs" />
@@ -257,6 +256,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Layout.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Layout\Text.en.Designer.cs">
+      <DependentUpon>Text.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Layout\Text.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\Model\Traduction.Designer.cs">
       <DependentUpon>Traduction.resx</DependentUpon>
@@ -429,6 +438,14 @@
     <EmbeddedResource Include="Resources\Layout\Layout.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Layout.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Layout\Text.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Layout\Text.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Model\Traduction.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

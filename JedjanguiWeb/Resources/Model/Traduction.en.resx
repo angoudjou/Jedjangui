@@ -133,13 +133,22 @@
     <value>Credit</value>
   </data>
   <data name="Date" xml:space="preserve">
-    <value>Date of Creation</value>
+    <value>Date</value>
   </data>
   <data name="DateAdhession" xml:space="preserve">
     <value>Registered On</value>
   </data>
   <data name="DateAjouter" xml:space="preserve">
     <value>Added on</value>
+  </data>
+  <data name="DateCreation" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="DateDebut" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="DateFin" xml:space="preserve">
+    <value>To</value>
   </data>
   <data name="DateNaissance" xml:space="preserve">
     <value>Birth Date</value>
@@ -149,6 +158,9 @@
   </data>
   <data name="DebutExo" xml:space="preserve">
     <value>From</value>
+  </data>
+  <data name="Duree" xml:space="preserve">
+    <value>Period</value>
   </data>
   <data name="Eloge" xml:space="preserve">
     <value>Eloge</value>
@@ -183,8 +195,14 @@
   <data name="Montant" xml:space="preserve">
     <value>Amount</value>
   </data>
+  <data name="MontantARembourser" xml:space="preserve">
+    <value>Amount to Pay back</value>
+  </data>
   <data name="MontantAvant" xml:space="preserve">
     <value>Last Deposit</value>
+  </data>
+  <data name="MontantRembourser" xml:space="preserve">
+    <value>Reimbursed Amount</value>
   </data>
   <data name="NbEnfant" xml:space="preserve">
     <value>Number of Dependants</value>
@@ -194,6 +212,9 @@
   </data>
   <data name="NomExo" xml:space="preserve">
     <value>Name of the Exercise</value>
+  </data>
+  <data name="NomFond" xml:space="preserve">
+    <value>Name of Fund</value>
   </data>
   <data name="Note" xml:space="preserve">
     <value>Observation</value>
@@ -230,5 +251,8 @@
   </data>
   <data name="TypeFond" xml:space="preserve">
     <value>Type</value>
+  </data>
+  <data name="Valider" xml:space="preserve">
+    <value>Validated?</value>
   </data>
 </root>

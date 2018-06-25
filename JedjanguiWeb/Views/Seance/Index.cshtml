@@ -7,9 +7,9 @@
 <h2>@JedjanguiWeb.Resources.Layout.Layout.TitreSeance   @Session["CODEASSO"]</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.TitreAjouter, "Create")
 </p>
-<table class="table">
+<table class=" table table-bordered table-striped table-responsive table-hover table-condensed">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.CODESEANCE)

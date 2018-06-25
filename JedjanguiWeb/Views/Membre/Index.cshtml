@@ -1,7 +1,7 @@
 ﻿@model PagedList.IPagedList<JedjanguiWeb.Models.Membre>
 @using PagedList.Mvc;
 @{
-    ViewBag.Title = JedjanguiWeb.Resources.Layout.Layout.TitreMembre;
+    ViewBag.Title = JedjanguiWeb.Resources.Layout.Text.TitreDuSite + JedjanguiWeb.Resources.Layout.Layout.TitreMembre;
 }
 
 <h2>@JedjanguiWeb.Resources.Layout.Layout.TitreMembre</h2>
@@ -16,8 +16,8 @@
     <input type="search" class="form-control" name="SearchString" value=@ViewBag.SearchString>
     <input type="submit" class="btn btn-default" />
 </form>
-
-<table class="table">
+<br />
+<table class="table table-bordered table-striped table-responsive table-hover table-condensed"  >
     <tr>
 
         <th>
@@ -71,8 +71,12 @@
                 @Html.DisplayFor(modelItem => item.MATRICULE)
             </td>
             <td>
+                <a href=" @Url.Action("Edit", "Membre", new { id = item.CODEMEMBRE })">  <span class="glyphicon glyphicon-edit"></span>     </a>
+
                 @Html.ActionLink("Edit", "Edit", new { id = item.CODEMEMBRE }) |
+                <a href=" @Url.Action("Details", "Membre", new { id = item.CODEMEMBRE })"><span class="glyphicon glyphicon-list"></span></a>
                 @Html.ActionLink("Details", "Details", new { id = item.CODEMEMBRE }) |
+                <a href=" @Url.Action("Details", "Membre", new { id = item.CODEMEMBRE })"><span class="glyphicon glyphicon-remove-circle"></span></a>
                 @Html.ActionLink("Delete", "Delete", new { id = item.CODEMEMBRE })
             </td>
         </tr>
