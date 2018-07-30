@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace JedjanguiWeb.Controllers
 {
+   // [RequireHttps]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -19,6 +20,10 @@ namespace JedjanguiWeb.Controllers
             if (Session["Email"] != null)
             {
                
+            }
+            if (Request.IsAuthenticated)
+            {
+
             }
  //return RedirectToAction("Index", "Association");
             return View();

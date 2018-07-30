@@ -13,6 +13,7 @@ using PagedList;
 
 namespace JedjanguiWeb.Controllers
 {
+    [Authorize]
     public class MembreController : Controller
     {
         private JeDjanguiContext db = new JeDjanguiContext();
@@ -37,9 +38,10 @@ namespace JedjanguiWeb.Controllers
                 membres = membres.Where(g => g.CODEASSO.Equals(codeasso)).ToList();
 
             if (!string.IsNullOrEmpty(SearchString))
-                membres = membres.Where(f => f.NOMMEMBRE.Contains(SearchString)).ToList();
+                membres = membres.Where(f => f.NOMMEMBRE.ToLower().Contains(SearchString.ToLower())).ToList();
 
-            
+            ViewBag.SearchString = SearchString;
+
             return View(membres.ToPagedList(page,Singleton. pageSize));
            
            

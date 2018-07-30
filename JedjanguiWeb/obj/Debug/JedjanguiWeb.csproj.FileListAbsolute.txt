@@ -121,6 +121,8 @@ C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\bin\WebGrease.dll
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\bin\EntityFramework.xml
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\bin\EntityFramework.SqlServer.xml
+C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\bin\PagedList.xml
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\bin\PagedList.Mvc.xml
@@ -133,8 +135,6 @@ C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\bin\System.Web.WebPages.Razor.xml
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\bin\Antlr3.Runtime.pdb
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\bin\Newtonsoft.Json.xml
-C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\bin\Microsoft.Owin.xml
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\bin\Microsoft.Owin.Host.SystemWeb.xml
@@ -150,13 +150,16 @@ C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\bin\Microsoft.AI.Web.xml
+C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.csprojAssemblyReference.cache
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.Migrations.initial.resources
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.Migrations.second.resources
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.Migrations.pret.resources
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.Migrations.mouvemebt.resources
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.Resources.Layout.Layout.resources
+C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.Resources.Layout.Text.resources
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.Resources.Model.Traduction.resources
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.Resources.Layout.Layout.en.resources
+C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.Resources.Layout.Text.en.resources
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.Resources.Model.Traduction.en.resources
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.csproj.GenerateResource.cache
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.csproj.CoreCompileInputs.cache
@@ -164,6 +167,3 @@ C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.csproj.CopyComplete
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.dll
 C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.pdb
-C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.csprojAssemblyReference.cache
-C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.Resources.Layout.Text.resources
-C:\Users\asengo\Documents\Projets\Visual Studio\JeDjangui\Jedjangui\JedjanguiWeb\obj\Debug\JedjanguiWeb.Resources.Layout.Text.en.resources

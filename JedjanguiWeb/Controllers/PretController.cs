@@ -13,6 +13,7 @@ using JedjanguiWeb.DesignPattern;
 
 namespace JedjanguiWeb.Controllers
 {
+    [Authorize]
     public class PretController : Controller
     {
        

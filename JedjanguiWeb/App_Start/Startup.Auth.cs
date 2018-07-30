@@ -58,11 +58,14 @@ namespace JedjanguiWeb
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "627278498329-ip2n3644l5o0fhmngtqpgroemagjvnns.apps.googleusercontent.com",
+                ClientSecret = "DEr07U3_mMS4oJWa9jA0XcKV"
+
+
+            }
+            );
         }
     }
 }

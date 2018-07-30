@@ -13,6 +13,7 @@ using PagedList;
 
 namespace JedjanguiWeb.Controllers
 {
+    [Authorize]
     public class AssociationController : Controller
     {
         private JeDjanguiContext db = new JeDjanguiContext();
@@ -52,7 +53,7 @@ namespace JedjanguiWeb.Controllers
                     if (string.IsNullOrEmpty(SearchString))
                         return View(asso.OrderBy(l => l.NOMASSO).ToPagedList(Page, Singleton.pageSize));
                     else
-                        return View(asso.Where(f => f.NOMASSO.Contains(SearchString)).OrderBy(l => l.NOMASSO).ToPagedList(Page, Singleton.pageSize));
+                        return View(asso.Where(f => f.NOMASSO.ToLower().Contains(SearchString.ToLower())).OrderBy(l => l.NOMASSO).ToPagedList(Page, Singleton.pageSize));
 
                 }
 

@@ -11,6 +11,7 @@ using JedjanguiWeb.Models;
 
 namespace JedjanguiWeb.Controllers
 {
+    [Authorize]
     public class SeanceController : Controller
     {
         private JeDjanguiContext db = new JeDjanguiContext();

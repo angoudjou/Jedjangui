@@ -1,4 +1,5 @@
 ﻿@using JedjanguiWeb.Resources
+@using Microsoft.AspNet.Identity
 
 <!DOCTYPE html>
 <html>
@@ -28,7 +29,7 @@
             </div>
             <div class="navbar-collapse collapse text-center">
                 <ul class="nav navbar-nav">
-                    <li >@Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuHome, "Index", "Home")</li>
+                    <li>@Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuHome, "Index", "Home")</li>
 
                     @if (Session["CODEASSO"] != null)
                     {
@@ -37,9 +38,9 @@
                             <li> @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuAssociation, "Index", "Association") </li>
 
                         }
-                        <li > @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuMembre, "Index", "Membre") </li>
-                        <li > @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuFond, "Index", "Fond") </li>
-                        <li > @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuExercice, "Index", "Exercice") </li>
+                        <li> @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuMembre, "Index", "Membre") </li>
+                        <li> @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuFond, "Index", "Fond") </li>
+                        <li> @Html.ActionLink(JedjanguiWeb.Resources.Layout.Layout.MenuExercice, "Index", "Exercice") </li>
 
                     }
 
@@ -99,7 +100,7 @@
 
         </div>
     </div>
-   
+
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -136,7 +137,12 @@
 
             @exo
             @sc
-
+            @if (Request.IsAuthenticated)
+            {
+              var   @hc = User.Identity.GetUserName();
+                <p>connecter :   @hc; </p>
+              
+            }
             <hr />
             <p class="text-center">&copy; @DateTime.Now.Year - ASENGO TECHNOLOGIES</p>
         </footer>

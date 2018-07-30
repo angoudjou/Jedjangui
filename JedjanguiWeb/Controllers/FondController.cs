@@ -14,8 +14,8 @@ using PagedList;
 
 namespace JedjanguiWeb.Controllers
 {
-  
 
+    [Authorize]
     public class FondController : Controller
     {
         private JeDjanguiContext db = new JeDjanguiContext();
